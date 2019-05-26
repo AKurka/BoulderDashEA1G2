@@ -19,7 +19,7 @@ public class DAOConnector extends DBQuery implements IDAOConnector {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(URL, user, password);
-            statemennt = connection.createStatement();
+            statement = connection.createStatement();
         }
         catch (final ClassNotFoundException e){
             e.printStackTrace();

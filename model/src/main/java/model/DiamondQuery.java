@@ -1,4 +1,48 @@
 package model;
 
-public class DiamondQuery extends DBQuery implements IDiamondQuery{
+import contract.IDiamondQuery;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DiamondQuery extends DBQuery implements IDiamondQuery {
+
+    public DiamondQuery(int level){
+        super(level);
+    }
+
+    public ResultSet executeDiamondQuery(ResultSet result, Statement statement) throws SQLException {
+        switch (level){
+            case 1 :
+                result = statement.executeQuery("call 'GetDiamonds_L1'");
+                break;
+            case 2 :
+                result = statement.executeQuery("call GetDiamonds_L2");
+                break;
+            case 3 :
+                result = statement.executeQuery("call GetDiamonds_L3");
+                break;
+            case 4 :
+                result = statement.executeQuery("call GetDiamonds_L4");
+                break;
+            case 5 :
+                result = statement.executeQuery("call GetDiamonds_L5");
+                break;
+            default:
+                System.out.print("Error");
+                break;
+        }
+        return result;
+    }
+
+    public void setQueryDiamond(ResultSet result){
+        try{
+            result.next();
+            finalDiamonds = result.getInt(1);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
