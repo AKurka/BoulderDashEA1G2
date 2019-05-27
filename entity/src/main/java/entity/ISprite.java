@@ -21,7 +21,7 @@ public interface ISprite {
 
     Permeability getPermeability();
 
-    void setPermeabilty(Permeability permeabilty);
+    void setPermeability(Permeability permeability);
 
     SpriteType getType();
 
