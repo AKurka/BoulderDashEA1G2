@@ -42,7 +42,7 @@ public class MapQuery extends DBQuery implements IMapQuery {
         return result;
     }
 
-    public void setMapQuery(ResultSet result, char[][] tab){
+    public void setMapQuery(ResultSet result, char[][] tab) {
         try {
             int ligne = 0;
             while (result.next()) {
@@ -51,8 +51,12 @@ public class MapQuery extends DBQuery implements IMapQuery {
                 }
                 ligne++;
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
+
+
     }
+
 }

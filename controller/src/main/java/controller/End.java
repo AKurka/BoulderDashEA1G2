@@ -21,6 +21,6 @@ public class End {
 
     public void victory(){
         panel.update();
-        JOptionPane.showMessageDialog(null, "Victor !");
+        JOptionPane.showMessageDialog(null, "Victoire !");
     }
 }

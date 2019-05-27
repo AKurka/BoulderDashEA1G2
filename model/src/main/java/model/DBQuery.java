@@ -1,5 +1,7 @@
 package model;
 
+import contract.IDiamondQuery;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -7,12 +9,12 @@ import java.sql.Statement;
 public class DBQuery {
     protected static int level = 0;
     protected static int finalDiamonds = 0;
-    protected static char tab[][] = new char[22][40];
+    protected static char tab[][] = new char[15][15];
     protected static DAOConnector connectionDB;
     protected static MapQuery mapQuery;
-    protected static DiamondQuery diamondQuery;
     protected static Statement statement = null;
     protected static ResultSet result;
+    protected static DiamondQuery diamondQuery;
 
 
     public DBQuery(int level){
@@ -25,15 +27,21 @@ public class DBQuery {
 
         mapQuery = new MapQuery(level);
         result = mapQuery.executeMapQuery(result, statement);
-        mapQuery.setMapQuery(result, tab);
 
         diamondQuery = new DiamondQuery(level);
-        try{
+        try {
             result = diamondQuery.executeDiamondQuery(result, statement);
             diamondQuery.setQueryDiamond(result);
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static char[][] getTab() {
+        return tab;
+    }
+
+    public int getFinalDiamonds(){
+        return finalDiamonds;
     }
 }

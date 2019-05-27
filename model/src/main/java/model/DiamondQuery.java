@@ -13,24 +13,24 @@ public class DiamondQuery extends DBQuery implements IDiamondQuery {
     }
 
     public ResultSet executeDiamondQuery(ResultSet result, Statement statement) throws SQLException {
-        switch (level){
-            case 1 :
-                result = statement.executeQuery("call 'GetDiamonds_L1'");
+        switch (level) {
+            case 1:
+                result = statement.executeQuery("call `GetDiamonds_1`()");
                 break;
-            case 2 :
-                result = statement.executeQuery("call GetDiamonds_L2");
+            case 2:
+                result = statement.executeQuery("call `GetDiamonds_2`()");
                 break;
-            case 3 :
-                result = statement.executeQuery("call GetDiamonds_L3");
+            case 3:
+                result = statement.executeQuery("call `GetDiamonds_3`()");
                 break;
-            case 4 :
-                result = statement.executeQuery("call GetDiamonds_L4");
+            case 4:
+                result = statement.executeQuery("call `GetDiamonds_4`()");
                 break;
-            case 5 :
-                result = statement.executeQuery("call GetDiamonds_L5");
+            case 5:
+                result = statement.executeQuery("call `GetDiamonds_5`()");
                 break;
             default:
-                System.out.print("Error");
+                System.out.print("System error");
                 break;
         }
         return result;
