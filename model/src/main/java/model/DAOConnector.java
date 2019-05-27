@@ -5,7 +5,7 @@ import contract.IDAOConnector;
 import java.sql.*;
 
 public class DAOConnector extends DBQuery implements IDAOConnector {
-    private final String URL = "url";
+    private final String URL = "";
     private final String user = "";
     private final String password = "";
     private Connection connection = null;

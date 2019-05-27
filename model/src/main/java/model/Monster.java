@@ -1,4 +1,7 @@
-package entity;
+package model;
+
+import contract.Permeability;
+import contract.SpriteType;
 
 import javax.imageio.ImageIO;
 import java.io.File;

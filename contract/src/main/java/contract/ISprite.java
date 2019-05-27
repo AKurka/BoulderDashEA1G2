@@ -1,7 +1,4 @@
-package entity;
-
-import entity.Permeability;
-import entity.SpriteType;
+package contract;
 
 import java.awt.*;
 

@@ -1,10 +1,14 @@
-package entity;
+package model;
+
+import contract.ISprite;
+import contract.Permeability;
+import contract.SpriteType;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Background extends Sprite implements ISprite{
+public class Background extends Sprite implements ISprite {
    public Background(int x, int y){
        super();
        this.permeability = Permeability.PERMEABLE;

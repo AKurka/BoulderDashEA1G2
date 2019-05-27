@@ -1,4 +1,4 @@
-package entity;
+package contract;
 
 public enum SpriteType {
     WALL,

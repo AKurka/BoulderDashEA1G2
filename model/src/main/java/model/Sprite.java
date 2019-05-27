@@ -1,8 +1,12 @@
-package entity;
+package model;
+
+import contract.ISprite;
+import contract.Permeability;
+import contract.SpriteType;
 
 import java.awt.*;
 
-public class Sprite implements ISprite{
+public class Sprite implements ISprite {
     protected Image image;
     protected int x;
     protected int y;
