@@ -7,8 +7,8 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Boulder extends Sprite{
-    public Boulder(int x, int y){
+public class Character extends Sprite{
+    public Character(int x, int y){
         super();
         this.permeability = Permeability.PERMEABLE;
         this.x = x;

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class Panel extends JPanel implements Serializable, IPanel {
     private static final long serialVersionUID = 1L;
-    protected Image buffer[][] = new Image[22][40];
+    protected Image buffer[][] = new Image[15][15];
     private int diamondGet = 0;
     private IMapMaker maker;
     private int finalDiamonds;

@@ -1,6 +1,6 @@
 package contract;
 
-public interface ITranslateMap {
+public interface ITranslation {
 
     public int getBoulderX();
 
