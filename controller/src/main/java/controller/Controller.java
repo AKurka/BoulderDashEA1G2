@@ -24,6 +24,7 @@ public class Controller {
         this.frame = frame;
         this.finalDiamonds = finalDiamonds;
 
-         
+        move = new Move(builder.getSprites(), SET_SIZE, frame.getPanel());
+        end = new End(this.panel, this.frame);
     }
 }

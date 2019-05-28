@@ -12,7 +12,7 @@ public class Panel extends JPanel implements Serializable, IPanel {
     protected Image buffer[][] = new Image[15][15];
     private int diamondGet = 0;
     private IMapBuilder maker;
-    private int finalDiamonds;
+    private int finalDiamonds = 0;
 
     public Panel(IMapBuilder maker, int finalDiamonds){
         this.maker = maker;
