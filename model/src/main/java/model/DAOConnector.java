@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class DAOConnector extends DBQuery implements IDAOConnector {
     private final String URL = "";
-    private final String user = "";
+    private final String user = "root";
     private final String password = "";
     private Connection connection = null;
     private int choice = 0;

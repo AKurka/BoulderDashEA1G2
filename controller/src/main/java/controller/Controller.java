@@ -9,7 +9,7 @@ import view.Frame;
 import java.io.File;
 import java.util.Observable;
 
-public class Controller {
+public class Controller implements IController {
     private UserOrder stackOrder = UserOrder.NOOP;
     private int SET_SIZE = 0, colonne = 0, ligne = 0, finalDiamonds = 0;
     private IPanel panel;
@@ -85,7 +85,7 @@ public class Controller {
                 end.gameOver();
             }
 
-            monsterMove.toMoveTheMonsters(builder.getSprites(), gravitySounds);
+            monsterMove.MoveMonsters(builder.getSprites(), gravitySounds);
 
             if (gravity.isGameOver() || monsterMove.isGameOver()) {
                 backSound.stopSound();
@@ -116,15 +116,16 @@ public class Controller {
 
     @Override
     public void update(Observable obs, Object obj){
-        if (obs instanceof BKeyListener) {
-            try {
+        if(obs instanceof BKeyListener){
+            try{
                 directionControl();
             }
-            catch (InterruptedException e) {
+            catch (InterruptedException e){
                 e.printStackTrace();
             }
         }
     }
+
 
     public void setExitToPermeable(ISprite[][] sprites) {
         for (ISprite[] sousSpit : sprites) {

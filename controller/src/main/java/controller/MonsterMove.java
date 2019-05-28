@@ -13,7 +13,7 @@ public class MonsterMove implements IMonsterMove {
     private int colonne = 0;
     private boolean gameOver = false;
 
-    public ISprite[][] toMoveMonsters(ISprite[][] sprites, IAudio audio){
+    public ISprite[][] MoveMonsters(ISprite[][] sprites, IAudio audio){
         ligne = 0;
         for(ISprite sousSpit[] : sprites){
             colonne = 0;

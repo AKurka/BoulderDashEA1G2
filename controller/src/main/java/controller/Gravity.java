@@ -7,6 +7,8 @@ import model.Background;
 import model.Move;
 import model.Sprite;
 
+import java.io.File;
+
 public class Gravity {
     private int ligne = 0;
     private int colonne = 0;
@@ -28,7 +30,7 @@ public class Gravity {
                         spit.setY(spit.getY() + 16);
                         spit.setHasMoved(true);
                         sprites[ligne + 1][colonne] = spit;
-                        audio.playSound("music/die.wav", 40.0f);
+                        audio.playSound(new File("music/move.wav"), 40.4f);
                         gameOver();
                     }
                 }

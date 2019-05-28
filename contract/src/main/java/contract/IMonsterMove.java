@@ -2,7 +2,7 @@ package contract;
 
 public interface IMonsterMove {
 
-    public ISprite[][] toMoveTheMonsters(ISprite[][] sprites, IAudio audio);
+    public ISprite[][] MoveMonsters(ISprite[][] sprites, IAudio audio);
 
     public Boolean isSpriteNearToBackground(ISprite sprite);
 

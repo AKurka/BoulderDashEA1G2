@@ -16,20 +16,19 @@ public class MapQuery extends DBQuery implements IMapQuery {
         try {
             switch (level) {
                 case 1:
-                    result = statement.executeQuery("call `procedure_LV1`");
+                    result = statement.executeQuery("call `lvl1_procedure`");
                     break;
                 case 2:
-                    result = statement.executeQuery("call `procedure_LV2`");
+                    result = statement.executeQuery("call `lvl2_procedure`");
                     break;
                 case 3:
-                    result = statement.executeQuery("call `procedure_LV3`");
-
+                    result = statement.executeQuery("call `lvl3_procedure`");
                     break;
                 case 4:
-                    result = statement.executeQuery("call `procedure_LV4`");
+                    result = statement.executeQuery("call `lvl4_procedure`");
                     break;
                 case 5:
-                    result = statement.executeQuery("call `procedure_LV5`");
+                    result = statement.executeQuery("call `lvl5_procedure`");
                     break;
                 default:
                     System.out.print("System error");

@@ -30,7 +30,7 @@ public class DiamondQuery extends DBQuery implements IDiamondQuery {
                 result = statement.executeQuery("call `GetDiamonds_5`()");
                 break;
             default:
-                System.out.print("System error");
+                System.out.print("SQL Diamond Error");
                 break;
         }
         return result;

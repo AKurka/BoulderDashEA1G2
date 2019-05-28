@@ -23,7 +23,7 @@ public class Menu extends JFrame {
     }
 
     public Menu(){
-        setSize(new Dimension(400, 500));
+        setSize(new Dimension(350, 75));
         this.setTitle("BoulderDash Exia A1 G2");
         setLayout(new BorderLayout());
         JPanel butonPane = new JPanel();
@@ -36,7 +36,7 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String[] level = {"Level 1", "Level 2", "Level 3", "Level 4", "Level 5"};
                 JOptionPane jop = new JOptionPane();
-                String name = (String) jop.showInputDialog(null, "Level choice", "Level choice", JOptionPane.QUESTION_MESSAGE, null, level, level[0]);
+                String name = (String) jop.showInputDialog(null, "Choose a level :", "Level choice", JOptionPane.QUESTION_MESSAGE, null, level, level[0]);
                 if(name == "Level 1"){
                     choice = 1;
                 }

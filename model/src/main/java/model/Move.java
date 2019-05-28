@@ -31,7 +31,7 @@ public class Move implements IMove {
 
     public ISprite[][] goUp(int colonne, int ligne, ISprite sprite, IAudio audio) {
         GoUp up = new GoUp(sprites, ligne, panel);
-        return up.goUp(colonne, ligne, sprite, this.sprites, this.panel);
+        return up.goUp(colonne, ligne, sprite, this.sprites, this.panel, audio);
     }
 
     public ISprite[][] goDown(int colonne, int ligne, ISprite sprite, IAudio audio) {
