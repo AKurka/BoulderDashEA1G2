@@ -3,25 +3,29 @@ package controller;
 import contract.*;
 import model.MapBuilder;
 import model.Move;
+import view.Audio;
 import view.Frame;
 
+import java.io.File;
 import java.util.Observable;
 
 public class Controller {
     private UserOrder stackOrder = UserOrder.NOOP;
-    private int SET_SIZE = 0;
-    private int colonne = 0;
-    private int ligne = 0;
-    private int finalDiamonds = 0;
-
+    private int SET_SIZE = 0, colonne = 0, ligne = 0, finalDiamonds = 0;
     private IPanel panel;
     private ISprite sprite;
     private MapBuilder builder;
     private Move move;
-    private Frame frame;
     private Gravity gravity;
+    private Frame frame;
     private MonsterMove monsterMove;
 
+    private Audio backSound;
+    private Audio start;
+    private Audio gravitySounds;
+    private Audio moveSounds;
+    private Audio gameOver;
+    private Audio victory;
     private End end;
 
     public Controller(ISprite sprite, IPanel panel, int SET_SIZE, MapBuilder builder, Frame frame, int finalDiamonds){
@@ -33,6 +37,16 @@ public class Controller {
         this.finalDiamonds = finalDiamonds;
 
         move = new Move(builder.getSprites(), SET_SIZE, frame.getPanel());
+        gravity = new Gravity();
+        monsterMove = new MonsterMove();
+        backSound = new Audio();
+        backSound.playSound(new File("music/jeu.wav"), -20.0f);
+        start = new Audio();
+        start.playSound(new File("music/new.wav"), 40.0f);
+        gravitySounds = new Audio();
+        moveSounds = new Audio();
+        gameOver = new Audio();
+        victory = new Audio();
         end = new End(this.panel, this.frame);
     }
 
@@ -64,7 +78,6 @@ public class Controller {
                 default:
                     break;
             }
-            gravity.makeThemSlide(builder.getSprites());
             gravity.makeThemFall(builder.getSprites(), gravitySounds);
 
             if (move.isGameOver()) {
