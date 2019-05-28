@@ -2,7 +2,7 @@ package contract;
 
 public interface IDBQuery {
 
-    public void launchQuerries();
+    public void Querries();
 
     public char[][] getTab();
 

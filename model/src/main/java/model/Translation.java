@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Translation implements ITranslation {
 
-    private Map<Character, SpriteType> translation = new HashMap<>();
+    private Map<java.lang.Character, SpriteType> translation = new HashMap<>();
     private int boulderX = 0;
     private int boulderY = 0;
     private SpriteType map[][] = new SpriteType[15][15];
