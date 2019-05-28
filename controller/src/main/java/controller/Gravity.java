@@ -28,7 +28,7 @@ public class Gravity {
                         spit.setY(spit.getY() + 16);
                         spit.setHasMoved(true);
                         sprites[ligne + 1][colonne] = spit;
-                        audio.playSound("music/dead.wav", 40f);
+                        audio.playSound("music/die.wav", 40.0f);
                         gameOver();
                     }
                 }

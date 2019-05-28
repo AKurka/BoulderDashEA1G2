@@ -10,10 +10,10 @@ import java.io.File;
 public class Audio implements IAudio {
     private Clip clip;
 
-    public void playSound(File Sound, float gain){
+    public void playSound(File sound, float gain){
         try{
             clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(Sound));
+            clip.open(AudioSystem.getAudioInputStream(sound));
             clip.start();
             FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             volume.setValue(gain);
