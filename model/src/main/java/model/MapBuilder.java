@@ -68,6 +68,11 @@ public class MapBuilder implements IMapBuilder {
         }
     }
 
+    public ISprite[][] getSprites() {
+        return sprites;
+    }
+
+
     public ISprite getCharacter(int colonne, int ligne) {
         return sprites[ligne][colonne];
     }

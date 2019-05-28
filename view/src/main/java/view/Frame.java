@@ -2,6 +2,7 @@ package view;
 
 import contract.IBKeyListener;
 import contract.IFrame;
+import contract.IMapBuilder;
 import contract.IPanel;
 
 import javax.swing.*;
@@ -12,7 +13,7 @@ public class Frame extends JFrame implements IFrame {
     int finalDiamonds;
 
 
-    public Frame(MapMaker maker, IBKeyListener listener, int finalDiamonds, int title){
+    public Frame(IMapBuilder maker, IBKeyListener listener, int finalDiamonds, int title){
         this.finalDiamonds = finalDiamonds;
         this.setTitle("BoulderDashRemastered level" + title);
         this.setSize(660, 420);

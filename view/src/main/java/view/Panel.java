@@ -1,5 +1,6 @@
 package view;
 
+import contract.IMapBuilder;
 import contract.IPanel;
 
 import javax.swing.*;
@@ -10,10 +11,10 @@ public class Panel extends JPanel implements Serializable, IPanel {
     private static final long serialVersionUID = 1L;
     protected Image buffer[][] = new Image[15][15];
     private int diamondGet = 0;
-    private IMapMaker maker;
+    private IMapBuilder maker;
     private int finalDiamonds;
 
-    public Panel(MapMaker maker, int finalDiamonds){
+    public Panel(IMapBuilder maker, int finalDiamonds){
         this.maker = maker;
         this.finalDiamonds = finalDiamonds;
     }
