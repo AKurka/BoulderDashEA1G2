@@ -92,7 +92,7 @@ public class Controller {
                 end.gameOver(gameOver);
             }
 
-            if (panel.getDiamondsGet() >= finalDiamonds) {
+            if (panel.getDiamondGet() >= finalDiamonds) {
                 setExitToPermeable(builder.getSprites());
             }
 
