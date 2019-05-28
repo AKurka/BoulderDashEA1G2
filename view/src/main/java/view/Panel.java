@@ -25,7 +25,7 @@ public class Panel extends JPanel implements Serializable, IPanel {
     }
 
     public void paintComponent(Graphics g){
-        this.updateCount(g);
+        this.update(g);
         this.counterDiamond(g);
         this.maker.drawMap(g);
     }

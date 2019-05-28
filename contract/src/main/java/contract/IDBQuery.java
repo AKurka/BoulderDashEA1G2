@@ -7,4 +7,6 @@ public interface IDBQuery {
     public char[][] getTab();
 
     public int getFinalDiamonds();
+
+
 }
