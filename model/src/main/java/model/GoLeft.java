@@ -1,5 +1,6 @@
 package model;
 
+import contract.IAudio;
 import contract.IPanel;
 import contract.ISprite;
 
@@ -13,7 +14,7 @@ public class GoLeft extends Move {
         super(sprites, SET_SIZE, panel);
     }
 
-    public ISprite[][] goLeft(int colonne, int ligne, ISprite sprite, ISprite[][] sprites, IPanel panel) {
+    public ISprite[][] goLeft(int colonne, int ligne, ISprite sprite, ISprite[][] sprites, IPanel panel, IAudio audio) {
         try {
             image = ImageIO.read(new File("image/left.png"));
         } catch (IOException e) {
@@ -21,6 +22,7 @@ public class GoLeft extends Move {
         }
         if (nextToDiamond(sprites[ligne][colonne - 1])) {
             panel.setDiamondsGet(panel.getDiamondGet() + 1);
+            audio.playSound(new File("music/move.wav"), 40.4f);
         }
         if (nextToExitOpen(sprites[ligne][colonne - 1])) {
             setVictory(true);
@@ -29,6 +31,7 @@ public class GoLeft extends Move {
             sprites[ligne][colonne] = new Background(sprite.getX(), sprite.getY());
             sprite.setX(sprite.getX() - 16);
             sprites[ligne][colonne - 1] = new Monster(sprite.getX(), sprite.getY());
+            audio.playSound(new File("music/die.wav"), 40.4f);
             gameOver(true);
             return sprites;
         }
@@ -40,6 +43,7 @@ public class GoLeft extends Move {
             sprites[ligne][colonne - 2] = new Rock((sprite.getX() - 16), sprite.getY());
             return sprites;
         } else if (isSpriteOn(sprites[ligne][colonne - 1])) {
+            audio.playSound(new File("music/dig.wav"), 40.4f);
             return sprites;
         }
 

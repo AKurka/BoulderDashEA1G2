@@ -82,14 +82,14 @@ public class Controller {
 
             if (move.isGameOver()) {
                 backSound.stopSound();
-                end.gameOver(gameOver);
+                end.gameOver();
             }
 
             monsterMove.toMoveTheMonsters(builder.getSprites(), gravitySounds);
 
             if (gravity.isGameOver() || monsterMove.isGameOver()) {
                 backSound.stopSound();
-                end.gameOver(gameOver);
+                end.gameOver();
             }
 
             if (panel.getDiamondGet() >= finalDiamonds) {
@@ -98,7 +98,7 @@ public class Controller {
 
             if (move.isVictory()) {
                 backSound.stopSound();
-                end.victory(victory);
+                end.victory();
                 victory.stopSound();
             }
             stackOrder = UserOrder.NOOP;

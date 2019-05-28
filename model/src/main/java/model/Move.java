@@ -19,24 +19,24 @@ public class Move implements IMove {
         this.panel = panel;
     }
 
-    public ISprite[][] goLeft(int colonne, int ligne, ISprite sprite) {
+    public ISprite[][] goLeft(int colonne, int ligne, ISprite sprite, IAudio audio) {
         GoLeft left = new GoLeft(sprites, ligne, panel);
-        return left.goLeft(colonne, ligne, sprite, this.sprites, this.panel);
+        return left.goLeft(colonne, ligne, sprite, this.sprites, this.panel, audio);
     }
 
-    public ISprite[][] goRight(int colonne, int ligne, ISprite sprite) {
+    public ISprite[][] goRight(int colonne, int ligne, ISprite sprite, IAudio audio) {
         GoRight right = new GoRight(sprites, ligne, panel);
-        return right.goRight(colonne, ligne, sprite, this.sprites, this.panel);
+        return right.goRight(colonne, ligne, sprite, this.sprites, this.panel, audio);
     }
 
-    public ISprite[][] goUp(int colonne, int ligne, ISprite sprite) {
+    public ISprite[][] goUp(int colonne, int ligne, ISprite sprite, IAudio audio) {
         GoUp up = new GoUp(sprites, ligne, panel);
         return up.goUp(colonne, ligne, sprite, this.sprites, this.panel);
     }
 
-    public ISprite[][] goDown(int colonne, int ligne, ISprite sprite) {
+    public ISprite[][] goDown(int colonne, int ligne, ISprite sprite, IAudio audio) {
         GoDown down = new GoDown(sprites, ligne, panel);
-        return down.goDown(colonne, ligne, sprite, this.sprites, this.panel);
+        return down.goDown(colonne, ligne, sprite, this.sprites, this.panel, audio);
     }
 
     public Boolean isSpriteOn(ISprite sprite){

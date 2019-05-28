@@ -7,6 +7,7 @@ import model.Translation;
 import view.Menu;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Launcher implements LevelObserve {
     private static Menu menu;
@@ -35,8 +36,11 @@ public class Launcher implements LevelObserve {
 
                     BKeyListener bKeyListener = new BKeyListener();
                 }
+                catch (IOException e){
+                    e.printStackTrace();
+                }
             }
-        }))
+        })).start();
     }
 
 }
