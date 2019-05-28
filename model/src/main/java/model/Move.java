@@ -20,12 +20,12 @@ public class Move implements IMove {
     }
 
     public ISprite[][] goLeft(int colonne, int ligne, ISprite sprite) {
-        GoToLeft left = new GoToLeft(sprites, ligne, panel);
+        GoLeft left = new GoLeft(sprites, ligne, panel);
         return left.goLeft(colonne, ligne, sprite, this.sprites, this.panel);
     }
 
     public ISprite[][] goRight(int colonne, int ligne, ISprite sprite) {
-        GoToRight right = new GoToRight(sprites, ligne, panel);
+        GoRight right = new GoRight(sprites, ligne, panel);
         return right.goRight(colonne, ligne, sprite, this.sprites, this.panel);
     }
 

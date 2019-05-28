@@ -21,4 +21,5 @@ public interface IMove {
     public Boolean nextToBack(ISprite sprite);
 
     public Boolean nextToRock(ISprite sprite);
+
 }

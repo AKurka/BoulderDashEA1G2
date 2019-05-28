@@ -12,4 +12,5 @@ public interface IPanel {
     public int getDiamondGet();
 
     public void setDiamondsGet(int diamondsGet);
+
 }
