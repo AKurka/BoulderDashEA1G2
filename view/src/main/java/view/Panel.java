@@ -24,8 +24,13 @@ public class Panel extends JPanel implements Serializable, IPanel {
         g.drawString("Diamonds : " + diamondGet, 10, 365);
     }
 
+    public void updateCount(Graphics g){
+        g.setColor(Color.blue);
+        g.fillRect(0,0,800,500);
+    }
+
     public void paintComponent(Graphics g){
-        this.update(g);
+        this.updateCount(g);
         this.counterDiamond(g);
         this.maker.drawMap(g);
     }
