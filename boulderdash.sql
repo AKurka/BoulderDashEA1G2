@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 29 mai 2019 à 07:04
+-- Généré le :  mer. 29 mai 2019 à 12:27
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -108,7 +108,7 @@ DROP TABLE IF EXISTS `diamonds`;
 CREATE TABLE IF NOT EXISTS `diamonds` (
   `level` int(11) NOT NULL,
   `diamonds` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `diamonds`
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `levels` (
   `level` int(255) NOT NULL,
   `line` int(255) NOT NULL,
   `chars` varchar(255) COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `levels`
