@@ -5,7 +5,7 @@ import contract.IDAOConnector;
 import java.sql.*;
 
 public class DAOConnector extends DBQuery implements IDAOConnector {
-    private final String URL = "";
+    private final String URL = "jdbc:mysql://localhost/boulderdash?autoReconnect=true&useSSL=false";
     private final String user = "root";
     private final String password = "";
     private Connection connection = null;

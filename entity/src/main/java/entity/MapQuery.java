@@ -1,34 +1,33 @@
-package model;
+package entity;
 
-import contract.IMapQuery;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class MapQuery extends DBQuery implements IMapQuery {
+public class MapQuery {
 
     public MapQuery(int level){
-        super(level);
+        super();
     }
 
-    public ResultSet executeMapQuery(ResultSet result, Statement statement){
+    public ResultSet executeMapQuery(ResultSet result, Statement statement, int level){
         try {
             switch (level) {
                 case 1:
-                    result = statement.executeQuery("call `lvl1_procedure`");
+                    result = statement.executeQuery("call lvl1_procedure()");
                     break;
                 case 2:
-                    result = statement.executeQuery("call `lvl2_procedure`");
+                    result = statement.executeQuery("call lvl2_procedure()");
                     break;
                 case 3:
-                    result = statement.executeQuery("call `lvl3_procedure`");
+                    result = statement.executeQuery("call lvl3_procedure()");
                     break;
                 case 4:
-                    result = statement.executeQuery("call `lvl4_procedure`");
+                    result = statement.executeQuery("call lvl4_procedure()");
                     break;
                 case 5:
-                    result = statement.executeQuery("call `lvl5_procedure`");
+                    result = statement.executeQuery("call lvl5_procedure()");
                     break;
                 default:
                     System.out.print("System error");

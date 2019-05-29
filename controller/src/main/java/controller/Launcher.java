@@ -35,8 +35,11 @@ public class Launcher implements LevelObserve {
 
                     BKeyListener bKeyListener = new BKeyListener();
                 }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
             }
-        }))
+        })).start();
     }
 
 }

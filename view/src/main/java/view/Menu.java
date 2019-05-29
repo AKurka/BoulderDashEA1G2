@@ -68,7 +68,7 @@ public class Menu extends JFrame {
         buton4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Ajouter de l'aide");
+                javax.swing.JOptionPane.showMessageDialog(null, "This page is still on development. It will be available later !");
             }
         });
         butonPane.add(buton2);

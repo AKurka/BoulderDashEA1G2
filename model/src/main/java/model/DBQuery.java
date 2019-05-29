@@ -1,5 +1,7 @@
 package model;
 
+import entity.MapQuery;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,7 +26,7 @@ public class DBQuery {
         connectionDB.connection();
 
         mapQuery = new MapQuery(level);
-        result = mapQuery.executeMapQuery(result, statement);
+        result = mapQuery.executeMapQuery(result, statement, level);
 
         diamondQuery = new DiamondQuery(level);
         try {
