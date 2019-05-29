@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 28 mai 2019 à 21:01
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Généré le :  mer. 29 mai 2019 à 07:04
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,82 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `boulderdash`
 --
+
+DELIMITER $$
+--
+-- Procédures
+--
+DROP PROCEDURE IF EXISTS `lvl1_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl1_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 1;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl1_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl1_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 1;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl2_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl2_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 2;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl2_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl2_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 2;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl3_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl3_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 3;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl3_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl3_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 3;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl4_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl4_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 4;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl4_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl4_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 4;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl5_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl5_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 5;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl5_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl5_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 5;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
