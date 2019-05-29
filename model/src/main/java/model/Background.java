@@ -17,7 +17,7 @@ public class Background extends Sprite implements ISprite {
        this.type = SpriteType.BACKGROUND;
 
        try {
-           image = ImageIO.read(new File("image/back.png"));
+           image = ImageIO.read(new File("model/src/main/resources/image/back.png"));
        }
        catch (IOException e){
            e.printStackTrace();

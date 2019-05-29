@@ -8,34 +8,34 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observable;
 
-public class BKeyListener extends Observable implements KeyListener, IBKeyListener{
+public class BKeyListener extends Observable implements KeyListener, IBKeyListener {
     private IController controller;
 
     public UserOrder keyUserOrder(final int keyCode){
         UserOrder userOrder;
 
-                switch (keyCode) {
-                    case KeyEvent.VK_RIGHT:
-                        userOrder = UserOrder.RIGHT;
-                        break;
+        switch (keyCode) {
+            case KeyEvent.VK_D:
+                userOrder = UserOrder.RIGHT;
+                break;
 
-                    case KeyEvent.VK_LEFT:
-                        userOrder = UserOrder.LEFT;
-                        break;
+            case KeyEvent.VK_Q:
+                userOrder = UserOrder.LEFT;
+                break;
 
-                    case KeyEvent.VK_UP:
-                        userOrder = UserOrder.UP;
-                        break;
+            case KeyEvent.VK_Z:
+                userOrder = UserOrder.UP;
+                break;
 
-                    case KeyEvent.VK_DOWN:
-                        userOrder = UserOrder.DOWN;
-                        break;
+            case KeyEvent.VK_S:
+                userOrder = UserOrder.DOWN;
+                break;
 
-                    default:
-                        userOrder = UserOrder.NOOP;
-                        break;
-                }
-                return userOrder;
+            default:
+                userOrder = UserOrder.NOOP;
+                break;
+        }
+        return userOrder;
     }
 
     @Override
@@ -63,3 +63,6 @@ public class BKeyListener extends Observable implements KeyListener, IBKeyListen
         this.controller = controller;
     }
 }
+
+
+

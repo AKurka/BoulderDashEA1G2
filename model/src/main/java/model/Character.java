@@ -15,7 +15,7 @@ public class Character extends Sprite{
         this.y = y;
         this.type = SpriteType.BOULDER;
         try{
-            image = ImageIO.read(new File("image/boulder.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/boulder.png"));
         }
         catch (IOException e){
             e.printStackTrace();

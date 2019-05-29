@@ -17,7 +17,7 @@ public class GoRight extends Move {
 
     public ISprite[][] goRight(int colonne, int ligne, ISprite sprite, ISprite[][] sprites, IPanel panel, IAudio audio) {
         try {
-            image = ImageIO.read(new File("image/d1.png"));
+            image = ImageIO.read(new File("/resources/image/right.png"));
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

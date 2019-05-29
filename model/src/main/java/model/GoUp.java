@@ -15,7 +15,7 @@ public class GoUp extends Move {
 
     public ISprite[][] goUp(int colonne, int ligne, ISprite sprite, ISprite[][] sprites, IPanel panel, IAudio audio) {
         try {
-            image = ImageIO.read(new File("image/up.png"));
+            image = ImageIO.read(new File("/resources/image/up.png"));
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -31,12 +31,12 @@ public class GoUp extends Move {
             sprites[ligne][colonne] = new Background(sprite.getX(), sprite.getY());
             sprite.setY(sprite.getY() - 16);
             sprites[ligne - 1][colonne] = new Monster(sprite.getX(), sprite.getY());
-            audio.playSound(new File("die/move.wav"), 40.4f);
+            audio.playSound(new File("die/move.wav"), 0.0f);
             gameOver(true);
             return sprites;
         }
         if (isSpriteOn(sprites[ligne - 1][colonne])) {
-            audio.playSound(new File("music/dig.wav"), 40.4f);
+            audio.playSound(new File("model/src/main/resources/music/new.wav"), 0.0f);
             return sprites;
         } else {
             sprites[ligne][colonne] = new Background(sprite.getX(), sprite.getY());

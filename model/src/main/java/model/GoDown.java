@@ -16,7 +16,7 @@ public class GoDown extends Move{
 
     public ISprite[][] goDown(int colonne, int ligne, ISprite sprite, ISprite[][] sprites, IPanel panel, IAudio audio) {
         try {
-            image = ImageIO.read(new File("image/down.png"));
+            image = ImageIO.read(new File("/resources/image/down.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -8,7 +8,12 @@
   <artifactId>view</artifactId>
   <name>View</name>
   <dependencies>
-  	<dependency>
+      <dependency>
+          <groupId>jpublankproject</groupId>
+          <artifactId>model</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
   		<groupId>jpublankproject</groupId>
   		<artifactId>contract</artifactId>
   		<version>0.0.1-SNAPSHOT</version>

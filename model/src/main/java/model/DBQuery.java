@@ -1,13 +1,11 @@
 package model;
 
-import entity.MapQuery;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBQuery {
-    protected static int level = 0;
+    protected static int level = 1;
     protected static int finalDiamonds = 0;
     protected static char tab[][] = new char[15][15];
     protected static DAOConnector connectionDB;
@@ -26,7 +24,8 @@ public class DBQuery {
         connectionDB.connection();
 
         mapQuery = new MapQuery(level);
-        result = mapQuery.executeMapQuery(result, statement, level);
+        result = mapQuery.executeMapQuery(result, statement);
+        mapQuery.setMapQuery(result, tab);
 
         diamondQuery = new DiamondQuery(level);
         try {

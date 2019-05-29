@@ -16,7 +16,7 @@ public class Dirt extends Sprite{
         this.type = SpriteType.DIRT;
 
         try{
-            image = ImageIO.read(new File("image/dirt.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/dirt.png"));
         }
         catch (IOException e){
             e.printStackTrace();

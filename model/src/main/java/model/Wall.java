@@ -17,7 +17,7 @@ public class Wall extends Sprite{
         this.type = SpriteType.WALL;
 
         try{
-            image = ImageIO.read(new File("image/wall.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/wall.png"));
         }
         catch (IOException e){
             e.printStackTrace();

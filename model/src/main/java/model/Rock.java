@@ -17,7 +17,7 @@ public class Rock extends Sprite{
         this.type = SpriteType.ROCK;
 
         try{
-            image = ImageIO.read(new File("image/rock.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/rock.png"));
         }
         catch (IOException e){
             e.printStackTrace();

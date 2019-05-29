@@ -8,8 +8,9 @@ import view.Frame;
 
 import java.io.File;
 import java.util.Observable;
+import java.util.Observer;
 
-public class Controller implements IController {
+public class Controller implements IController, Observer {
     private UserOrder stackOrder = UserOrder.NOOP;
     private int SET_SIZE = 0, colonne = 0, ligne = 0, finalDiamonds = 0;
     private IPanel panel;
@@ -40,9 +41,9 @@ public class Controller implements IController {
         gravity = new Gravity();
         monsterMove = new MonsterMove();
         backSound = new Audio();
-        backSound.playSound(new File("music/jeu.wav"), -20.0f);
+        backSound.playSound(new File("model/src/main/resources/music/game.wav"), -20.0f);
         start = new Audio();
-        start.playSound(new File("music/new.wav"), 40.0f);
+        start.playSound(new File("model/src/main/resources/music/new.wav"), 0.0f);
         gravitySounds = new Audio();
         moveSounds = new Audio();
         gameOver = new Audio();

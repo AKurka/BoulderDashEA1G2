@@ -16,7 +16,7 @@ public class Monster extends Sprite{
         this.type = SpriteType.MONSTER;
 
         try{
-            image = ImageIO.read(new File("image/monster.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/monster.png"));
         }
         catch (IOException e){
             e.printStackTrace();

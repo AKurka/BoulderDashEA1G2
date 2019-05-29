@@ -1,17 +1,20 @@
-package entity;
+package model;
 
+
+import contract.IDBQuery;
+import contract.IMapQuery;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class MapQuery {
+public class MapQuery extends DBQuery implements IMapQuery {
 
     public MapQuery(int level){
-        super();
+        super(level);
     }
 
-    public ResultSet executeMapQuery(ResultSet result, Statement statement, int level){
+    public ResultSet executeMapQuery(ResultSet result, Statement statement){
         try {
             switch (level) {
                 case 1:

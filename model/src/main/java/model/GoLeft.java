@@ -16,7 +16,7 @@ public class GoLeft extends Move {
 
     public ISprite[][] goLeft(int colonne, int ligne, ISprite sprite, ISprite[][] sprites, IPanel panel, IAudio audio) {
         try {
-            image = ImageIO.read(new File("image/left.png"));
+            image = ImageIO.read(new File("/resources/image/left.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

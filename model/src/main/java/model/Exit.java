@@ -16,7 +16,7 @@ public class Exit extends Sprite{
         this.type = SpriteType.EXIT;
 
         try{
-            image = ImageIO.read(new File("image/exit.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/exit.png"));
         }
         catch (IOException e){
             e.printStackTrace();

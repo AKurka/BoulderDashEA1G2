@@ -17,7 +17,7 @@ public class Diamond extends Sprite{
         this.type = SpriteType.BOULDER;
 
         try{
-            image = ImageIO.read(new File("image/diamond.png"));
+            image = ImageIO.read(new File("model/src/main/resources/image/diamond.png"));
         }
         catch (IOException e){
             e.printStackTrace();

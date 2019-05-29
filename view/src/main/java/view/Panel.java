@@ -2,6 +2,7 @@ package view;
 
 import contract.IMapBuilder;
 import contract.IPanel;
+import model.MapBuilder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,11 +12,11 @@ public class Panel extends JPanel implements Serializable, IPanel {
     private static final long serialVersionUID = 1L;
     protected Image buffer[][] = new Image[15][15];
     private int diamondGet = 0;
-    private IMapBuilder maker;
+    private IMapBuilder builder;
     private int finalDiamonds = 0;
 
-    public Panel(IMapBuilder maker, int finalDiamonds){
-        this.maker = maker;
+    public Panel(MapBuilder builder, int finalDiamonds){
+        this.builder = builder;
         this.finalDiamonds = finalDiamonds;
     }
 
@@ -32,7 +33,7 @@ public class Panel extends JPanel implements Serializable, IPanel {
     public void paintComponent(Graphics g){
         this.updateCount(g);
         this.counterDiamond(g);
-        this.maker.drawMap(g);
+        this.builder.drawMap(g);
     }
 
     @Override
