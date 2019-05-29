@@ -1,18 +1,31 @@
-SET FOREIGN_KEY_CHECKS=0;
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mer. 29 mai 2019 à 07:04
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `boulderdash` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `boulderdash`;
+--
+-- Base de données :  `boulderdash`
+--
 
 DELIMITER $$
+--
+-- Procédures
+--
 DROP PROCEDURE IF EXISTS `lvl1_diamonds`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl1_diamonds` ()  BEGIN
 SELECT diamonds.level, diamonds
@@ -85,11 +98,21 @@ END$$
 
 DELIMITER ;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `diamonds`
+--
+
 DROP TABLE IF EXISTS `diamonds`;
 CREATE TABLE IF NOT EXISTS `diamonds` (
   `level` int(11) NOT NULL,
   `diamonds` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `diamonds`
+--
 
 INSERT INTO `diamonds` (`level`, `diamonds`) VALUES
 (1, 13),
@@ -98,12 +121,22 @@ INSERT INTO `diamonds` (`level`, `diamonds`) VALUES
 (4, 14),
 (5, 13);
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `levels`
+--
+
 DROP TABLE IF EXISTS `levels`;
 CREATE TABLE IF NOT EXISTS `levels` (
   `level` int(255) NOT NULL,
   `line` int(255) NOT NULL,
   `chars` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `levels`
+--
 
 INSERT INTO `levels` (`level`, `line`, `chars`) VALUES
 (1, 1, '///////////////'),
@@ -181,7 +214,6 @@ INSERT INTO `levels` (`level`, `line`, `chars`) VALUES
 (5, 13, '/K0**@XK/0*/XX/'),
 (5, 14, '/X@***0X/@*/X0/'),
 (5, 15, '///////////////');
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
