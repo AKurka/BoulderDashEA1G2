@@ -1,42 +1,95 @@
--- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 28 mai 2019 à 21:01
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
-
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de données :  `boulderdash`
---
+CREATE DATABASE IF NOT EXISTS `boulderdash` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `boulderdash`;
 
--- --------------------------------------------------------
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `lvl1_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl1_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 1;
+END$$
 
---
--- Structure de la table `diamonds`
---
+DROP PROCEDURE IF EXISTS `lvl1_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl1_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 1;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl2_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl2_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 2;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl2_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl2_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 2;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl3_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl3_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 3;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl3_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl3_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 3;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl4_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl4_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 4;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl4_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl4_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 4;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl5_diamonds`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl5_diamonds` ()  BEGIN
+SELECT diamonds.level, diamonds
+FROM diamonds
+WHERE level = 5;
+END$$
+
+DROP PROCEDURE IF EXISTS `lvl5_procedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lvl5_procedure` ()  BEGIN
+SELECT line, chars
+FROM levels
+WHERE level = 5;
+END$$
+
+DELIMITER ;
 
 DROP TABLE IF EXISTS `diamonds`;
 CREATE TABLE IF NOT EXISTS `diamonds` (
   `level` int(11) NOT NULL,
   `diamonds` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Déchargement des données de la table `diamonds`
---
 
 INSERT INTO `diamonds` (`level`, `diamonds`) VALUES
 (1, 13),
@@ -45,22 +98,12 @@ INSERT INTO `diamonds` (`level`, `diamonds`) VALUES
 (4, 14),
 (5, 13);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `levels`
---
-
 DROP TABLE IF EXISTS `levels`;
 CREATE TABLE IF NOT EXISTS `levels` (
   `level` int(255) NOT NULL,
   `line` int(255) NOT NULL,
   `chars` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Déchargement des données de la table `levels`
---
 
 INSERT INTO `levels` (`level`, `line`, `chars`) VALUES
 (1, 1, '///////////////'),
@@ -138,6 +181,7 @@ INSERT INTO `levels` (`level`, `line`, `chars`) VALUES
 (5, 13, '/K0**@XK/0*/XX/'),
 (5, 14, '/X@***0X/@*/X0/'),
 (5, 15, '///////////////');
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
