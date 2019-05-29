@@ -37,7 +37,7 @@ public class Launcher implements LevelObserve {
                     builder.mapCreation(SET_SIZE);
 
                     BKeyListener bkeyListener = new BKeyListener();
-                    Frame frame = new Frame(builder, bkeyListener, dbQuery.getFinalDiamonds(), level);
+                    Frame frame = new Frame(builder, bkeyListener, dbQuery.getFinalDiamonds(), level); // Ceci est un commentaire
                     Controller controller = new Controller(
                             builder.getCharacter(translation.getBoulderX(), translation.getBoulderY()), frame.getPanel(), SET_SIZE, builder, frame, dbQuery.getFinalDiamonds());
 
