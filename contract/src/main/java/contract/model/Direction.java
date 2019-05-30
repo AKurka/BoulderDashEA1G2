@@ -1,4 +1,8 @@
 package contract.model;
 
-public class Direction {
+public enum Direction {
+    UP,
+    DOWN,
+    RIGHT,
+    LEFT
 }

@@ -1,4 +1,9 @@
 package contract.controller;
 
-public class Order {
+public enum Order {
+
+    UP,
+    DOWN,
+    RIGHT,
+    LEFT
 }
