@@ -1,25 +1,22 @@
 package model;
 
-import contract.Permeability;
-import contract.SpriteType;
+import contract.model.Position;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+public class Exit extends Element {
 
-public class Exit extends Sprite{
-    public Exit(int x, int y){
-        super();
-        this.x = x;
-        this.y = y;
-        this.permeability = Permeability.BLOCKING;
-        this.type = SpriteType.EXIT;
+    private final static String STRING = "exit";
 
-        try{
-            image = ImageIO.read(new File("model/src/main/resources/image/exit.png"));
+    private static Exit EXIT;
+
+    private Exit(Position position, Mine mine){
+        super(position, STRING, mine);
+        comportment = new Fix(this);
+    }
+
+    public static Exit getInstance(Position position, Mine mine){
+        if(EXIT == null){
+            EXIT = new Exit(position, mine);
         }
-        catch (IOException e){
-            e.printStackTrace();
-        }
+        return EXIT;
     }
 }

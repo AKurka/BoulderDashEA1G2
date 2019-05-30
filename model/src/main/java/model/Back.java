@@ -2,11 +2,11 @@ package model;
 
 import contract.model.Position;
 
-public class Dirt extends Element {
+public class Back extends Element{
 
-    private final static String STRING = "dirt";
+    private final static String STRING = "back";
 
-    public Dirt(Position position, Mine mine){
+    public Back(Position position, Mine mine){
         super(position, STRING, mine);
         comportment = new Fix(this);
     }

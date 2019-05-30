@@ -1,40 +1,53 @@
 package view;
 
-import contract.IBKeyListener;
-import contract.IFrame;
-import contract.IMapBuilder;
-import contract.IPanel;
-import model.MapBuilder;
-import contract.IBKeyListener;
+import contract.model.IBDModel;
+import contract.view.IPerformEvent;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+public class Frame extends JFrame implements KeyListener {
 
-public class Frame extends JFrame implements IFrame {
-    private Panel panel;
-    int finalDiamonds;
+    private static final long serialVersionUID = 3792052992605473420L;
+    private IPerformEvent performerEvent;
 
+    public Frame(String title, IPerformEvent perform, IElementMaker maker;IBDModel model){
+        this.setTitle(title);
+        this.setSize(1270, 790);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-    public Frame(MapBuilder builder, IBKeyListener listener, int finalDiamonds, int title){
-        this.finalDiamonds = finalDiamonds;
-        this.setTitle("BoulderDashRemastered level" + title);
-        this.setSize(660, 420);
-        this.setResizable(true);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setFocusable(true);
-        this.addKeyListener((KeyListener) listener);
+        Panel panel = new Panel(maker, model);
 
-        panel = new Panel(builder, finalDiamonds);
+        System.out.println("test");
 
         this.setContentPane(panel);
+
+        model.observerAdd(panel);
+
+        addKeyListener(this);
+
+        this.performerEvent = perform;
+
         this.setVisible(true);
     }
 
-    public IPanel getPanel(){
-        return panel;
+    @Override
+    public void keyTyped(KeyEvent e){
+
     }
 
+    @Override
+    public void keyPressed(KeyEvent e){
+        try{
+            performerEvent.performEvent(e);
+        } catch(Exception e1) {
+            e1.printStackTrace();
+        }
+    }
 
+    @Override
+    public void keyReleased(KeyEvent e){
+
+    }
 }

@@ -1,26 +1,24 @@
 package model;
 
-import contract.Permeability;
-import contract.SpriteType;
+import contract.model.Position;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+public class Diamond extends Element implements IGet, IKill {
 
-public class Diamond extends Sprite{
+    private final static String STRING = "diamond";
 
-    public Diamond(int x, int y){
-        super();
-        this.permeability = Permeability.PERMEABLE;
-        this.x = x;
-        this.y = y;
-        this.type = SpriteType.BOULDER;
+    public Diamond(Position position, Mine mine){
+        super(position, STRING, mine);
+        comportment = new Gravity(this);
+    }
 
-        try{
-            image = ImageIO.read(new File("model/src/main/resources/image/diamond.png"));
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
+    @Override
+    public void get(Boulder boulder) throws Exception{
+        boulder.setDiamonds(boulder.getDiamonds()+1);
+        this.getMine().destroyElement(this);
+    }
+
+    @Override
+    public void kill(Element element){
+        element = null;
     }
 }

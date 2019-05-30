@@ -1,25 +1,21 @@
 package model;
 
-import contract.Permeability;
-import contract.SpriteType;
+import contract.model.Direction;
+import contract.model.Position;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+public class Monster extends Element {
 
-public class Monster extends Sprite{
-    public Monster(int x, int y){
-        super();
-        this.x = x;
-        this.y = y;
-        this.permeability = Permeability.KILL;
-        this.type = SpriteType.MONSTER;
+    private static String spriteType = "monster";
+    static Mine mine;
 
-        try{
-            image = ImageIO.read(new File("model/src/main/resources/image/monster.png"));
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
+    public Monster(Position position, Mine mine){
+        super(position, setSpriteTypeAlea(), mine);
+        Monster.mine = mine;
+        comportment = new Automatic(this);
+        direction = Direction.LEFT;
+    }
+
+    private static String setSpriteTypeAlea(){
+        int alea = (int) (Math.random()*4);
     }
 }
