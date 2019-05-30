@@ -10,14 +10,14 @@ public class Element implements IElement {
 
     private Position position;
     private Image Sprite;
-    ComportmentMove commportment;
+    ComportmentMove comportment;
     private Mine mine;
     private String SpriteType;
     Direction direction;
 
     Element(Position position, String sprite, Mine mine){
         this.position = position;
-        this Spritetype = sprite;
+        this.SpriteType = sprite;
         this.Sprite = loadSprite(this.SpriteType);
         this.mine = mine;
     }
@@ -64,8 +64,8 @@ public class Element implements IElement {
         return SpriteType;
     }
 
-    public ComportmentMove getCommportment(){
-        return this.commportment;
+    public ComportmentMove getComportment(){
+        return this.comportment;
     }
 
     public void setCommportment(ComportmentMove comportment){
