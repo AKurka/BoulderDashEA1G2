@@ -1,11 +1,12 @@
 package contract.view;
 
 import contract.controller.IOrderPerformer;
-import contract.model.IBDModel;
+import contract.model.IModel;
 
 public interface IView {
 
     void displayMessage(String message);
 
-    void start(IBDModel model, IOrderPerformer order);
+    void start(IModel model, IOrderPerformer order);
+
 }
