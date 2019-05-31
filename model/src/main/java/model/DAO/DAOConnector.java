@@ -10,7 +10,7 @@ public class DAOConnector {
 
     private static String password ="";
 
-    private static String url = "";
+    private static String url = "jdbc:mysql://localhost/boulderdash?useSSL=false";
 
     private Connection connection;
 

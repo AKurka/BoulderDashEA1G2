@@ -7,7 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public interface IModel {
 
-    IElement[][] getElement();
+    IElement[][] getElements();
 
     void addElement(IElement element);
 
