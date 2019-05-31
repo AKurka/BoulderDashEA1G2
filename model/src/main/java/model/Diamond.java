@@ -4,10 +4,10 @@ import contract.model.Position;
 
 public class Diamond extends Element implements Interaction{
 
-    private final static String STRING = "diamond";
+    private final static String IMAGE = "diamond";
 
     public Diamond(Position position, Map map){
-        super(position, STRING, map);
+        super(position, IMAGE, map);
         comportment = new Gravity(this);
     }
 

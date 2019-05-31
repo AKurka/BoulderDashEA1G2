@@ -4,11 +4,11 @@ import contract.model.Position;
 
 public class Background extends Element {
 
-    private final static String NAME = "background";
+    private final static String IMAGE = "background";
 
     public Background(Position position, Map map){
-        super(position, NAME, map);
-        comportment = new Fix(this);
+        super(position, IMAGE, map);
+        comportment = new Static(this);
 
     }
 }

@@ -1,8 +1,8 @@
 package model;
 
-public class Fix extends Comportment{
+public class Static extends Comportment{
 
-    public Fix(Element element){
+    public Static(Element element){
         super(element);
     }
 
