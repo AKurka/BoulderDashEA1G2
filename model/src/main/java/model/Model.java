@@ -41,7 +41,7 @@ public class Model extends Observable implements IModel {
 
     @Override
     public void observerAdd(Observer o) {
-
+        addObserver(o);
     }
 
     @Override
@@ -51,7 +51,11 @@ public class Model extends Observable implements IModel {
 
     @Override
     public void getDiamond(IElement element) throws Exception {
-
+        Boulder boulder = Boulder.getInstance();
+        this.map.destroyElement(element);
+        boulder.setDiamond(boulder.getDiamond()+1);
+        System.out.println(boulder.getDiamond());
+        this.hasChanged();
     }
 
     @Override

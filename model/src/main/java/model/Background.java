@@ -8,7 +8,7 @@ public class Background extends Element {
 
     public Background(Position position, Map map){
         super(position, NAME, map);
-        comportment = new Fixed(this);
+        comportment = new Fix(this);
 
     }
 }
