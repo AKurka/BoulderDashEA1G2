@@ -3,7 +3,7 @@ package model;
 import contract.model.Direction;
 import contract.model.Position;
 
-public class Boulder {
+public class Boulder extends Element {
 
     private static String IMAGE = "up";
 
@@ -17,6 +17,33 @@ public class Boulder {
 
     private Boulder(Position position, Map map){
         super(position, IMAGE, map);
+        comportment = new Controlled(this);
+    }
 
+    static public Boulder getInstance(Position position, Map map){
+        if(boulder == null){
+            boulder = new Boulder(position, map);
+        }
+        return boulder;
+    }
+
+    static public Boulder getInstance(){
+        return boulder;
+    }
+
+    public int getDiamond(){
+        return diamond;
+    }
+
+    public void setDiamond(int diamond){
+        this.diamond = diamond;
+    }
+
+    public Direction getDirection(){
+        return direction;
+    }
+
+    public void setDirection(Direction direction){
+        this.direction = direction;
     }
 }

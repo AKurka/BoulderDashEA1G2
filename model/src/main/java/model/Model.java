@@ -29,6 +29,10 @@ public class Model extends Observable implements IModel {
         return this.map.getElements();
     }
 
+    private Map getMap(){
+        return map;
+    }
+
     @Override
     public void addElement(IElement element) {
         this.map.setElement(element.getPosition().getX(), element.getPosition().getY(), element);
@@ -60,46 +64,52 @@ public class Model extends Observable implements IModel {
 
     @Override
     public int diamondCounter() throws Exception {
-        return 0;
+        Boulder boulder = Boulder.getInstance();
+
+        if(boulder = null){
+            throw new Exception("You loose");
+
+            return this.score = boulder.getDiamonds();
+        }
     }
 
     @Override
     public IElement getBoulder() {
-        return null;
+        return this.getMap().getBoulder();
     }
 
     @Override
     public CopyOnWriteArrayList<IElement> getMonster() {
-        return null;
+        return this.getMap().getMonster();
     }
 
     @Override
-    public CopyOnWriteArrayList<IElement> getGravity() {
-        return null;
+    public CopyOnWriteArrayList<IElement>getGravity() {
+        return this.getMap().getGravity();
     }
 
     @Override
     public Image getGameOver() {
-        return null;
+        return gameOver;
     }
 
     @Override
     public void observerDelete(Observer o) {
-
+        this.deleteObserver(o);
     }
 
     @Override
     public boolean isGame() {
-        return false;
+        return game;
     }
 
     @Override
     public void setGame(boolean game) {
-
+        this.game = game;
     }
 
     @Override
     public int getScore() {
-        return 0;
+        return score;
     }
 }

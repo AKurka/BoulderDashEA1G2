@@ -133,7 +133,7 @@ public class Map {
         this.monster.add(monster);
     }
 
-    public CopyOnWriteArrayList<IElement> getGravity{
+    public CopyOnWriteArrayList<IElement>getGravity(){
         return gravity;
     }
 
