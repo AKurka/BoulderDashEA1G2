@@ -1,0 +1,71 @@
+package view;
+
+import contract.model.IElement;
+import contract.model.Position;
+
+import java.util.Iterator;
+
+public class Gravity extends Comportment{
+
+    private boolean motion = false;
+
+    public Gravity(Element element){
+        super(element);
+    }
+
+    public void gravity() throws Exception{
+        Iterator<IElement>iterator = this.element.getMap().getGravity().iterator();
+        while (iterator.hasNext()){
+            iterator.next().getComportment().move();
+        }
+    }
+
+    @Override
+    public void move() throws Exception{
+        IElement down = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
+        IElement downr = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()+1];
+        IElement right = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
+        IElement downl = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()+1];
+        IElement left = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
+
+        if(down.getClass() == view.Background.class){
+            this.motion = true;
+            this.element.getComportment().moveDown();
+        }
+        if(down.getClass() != view.Background.class && left.getClass() == view.Background.class && downl.getClass() == view.Background.class && (down.getClass() == view.Diamond.class || down.getClass() == view.Rock.class)){
+            this.motion = true;
+            this.element.getComportment().moveLeft();
+            this.element.getComportment().moveDown();
+        }
+
+        if(down.getClass() != view.Background.class && right.getClass() == view.Background.class && downr.getClass() == view.Background.class && (down.getClass() == view.Diamond.class || down.getClass() == view.Rock.class)){
+            this.motion = true;
+            this.element.getComportment().moveRight();
+            this.element.getComportment().moveDown();
+        }
+        if(down.getClass() != view.Background.class && down.getClass() == view.Monster.class) {
+            IElement enemy = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
+
+            int x = enemy.getPosition().getX();
+            int y = enemy.getPosition().getY();
+            int xMax = enemy.getPosition().getXMax();
+            int yMax = enemy.getPosition().getYMax();
+
+            this.element.getMap().destroyElement(enemy);
+
+            IElement diamond = new Diamond(new Position(x,y,xMax,yMax),Monster.map);
+
+            this.element.getMap().setElement(x, y, diamond);
+
+            this.element.getMap().addGravity(diamond);
+        }
+        if(down.getClass() != view.Background.class && down.getClass() == view.Boulder.class && this.motion == true) {
+
+            Boulder.getInstance().destroy();
+
+        }
+        if(down.getClass() != view.Background.class){
+            this.motion = false;
+        }
+    }
+}
