@@ -66,11 +66,11 @@ public class Model extends Observable implements IModel {
     public int diamondCounter() throws Exception {
         Boulder boulder = Boulder.getInstance();
 
-        if(boulder = null){
+        if(boulder == null){
             throw new Exception("You loose");
 
-            return this.score = boulder.getDiamonds();
         }
+        return this.score = boulder.getDiamond();
     }
 
     @Override

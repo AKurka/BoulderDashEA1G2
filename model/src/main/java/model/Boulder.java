@@ -1,9 +1,10 @@
 package model;
 
 import contract.model.Direction;
+import contract.model.IDestroy;
 import contract.model.Position;
 
-public class Boulder extends Element {
+public class Boulder extends Element implements IDestroy {
 
     private static String IMAGE = "up";
 
@@ -45,5 +46,12 @@ public class Boulder extends Element {
 
     public void setDirection(Direction direction){
         this.direction = direction;
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        this.getMap().destroyElement(Boulder.boulder);
+        this.getMap().getModel().setGame(false);
+        Boulder.boulder = null;
     }
 }
