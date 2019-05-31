@@ -17,5 +17,26 @@ public class Monster extends Element {
 
     private static String setSpriteTypeAlea(){
         int alea = (int) (Math.random()*4);
+
+        switch(alea){
+            case 0:
+                return "enemy";
+            case 1:
+                return "enemy";
+            case 2:
+                return "enemy";
+            case 3:
+                return "enemy";
+            default:
+                return "enemy";
+        }
+    }
+
+    public String getSpriteType() {
+        return spriteType;
+    }
+
+    public void setSpriteType(String spriteType) {
+        Monster.spriteType = spriteType;
     }
 }

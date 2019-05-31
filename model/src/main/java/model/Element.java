@@ -69,7 +69,7 @@ public class Element implements IElement {
     }
 
     public void setCommportment(ComportmentMove comportment){
-        this.commportment = commportment;
+        this.comportment = comportment;
     }
 
     @Override

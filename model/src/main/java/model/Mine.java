@@ -2,6 +2,7 @@ package model;
 
 import contract.model.IElement;
 import contract.model.Position;
+import model.DAO.Level;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -36,12 +37,12 @@ public class Mine {
 
                 switch (element){
                     case '0' :
-                        IElement gravit = new Rock(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
+                        IElement gravit = new Rock(new Position(x,y,Mine.WIDTH,Mine.HEIGHT), this);
                         this.gravity.add(gravit);
                         this.setElement(x,y,gravit);
                         break;
                     case '/' :
-                        this.setElement(x,y,new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+                        this.setElement(x,y,new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT), this));
                         break;
                     case '@' :
                         gravit = new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
@@ -58,7 +59,7 @@ public class Mine {
                         this.boulder = Boulder.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
                         this.setElement(x,y,this.boulder);
                         break;
-                    case ' ' :
+                    case 'B' :
                         this.setElement(x,y,new Back(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
                         break;
                     case 'K' :
@@ -75,7 +76,7 @@ public class Mine {
         String result = "";
 
         try {
-            result = level.getLevel(levelToLoad);
+            result = Level.getLevel(levelToLoad);
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -94,7 +95,7 @@ public class Mine {
         return model;
     }
 
-    public CopyOnWriteArrayList<IElement> getMonster{
+    public CopyOnWriteArrayList<IElement> getMonster(){
         return monster;
     }
 
