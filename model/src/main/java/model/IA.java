@@ -1,4 +1,4 @@
-package view;
+package model;
 
 import contract.model.Direction;
 import contract.model.IElement;
@@ -41,7 +41,7 @@ public class IA extends Comportment {
     private void goLeft() throws Exception{
         IElement left = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 
-        if(left.getClass() == view.Background.class){
+        if(left.getClass() == Background.class){
             this.element.getComportment().moveLeft();
         }
         else if(left.equals(Boulder.getInstance())){
@@ -57,7 +57,7 @@ public class IA extends Comportment {
 
         IElement right = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
 
-        if(right.getClass() == view.Background.class){
+        if(right.getClass() == Background.class){
             this.element.getComportment().moveRight();
         }
         else if(right.equals(Boulder.getInstance())){
@@ -74,7 +74,7 @@ public class IA extends Comportment {
 
         IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()-1];
 
-        if(up.getClass() == view.Background.class){
+        if(up.getClass() == Background.class){
             this.element.getComportment().moveUp();
         }
         else if(up.equals(Boulder.getInstance())){
@@ -90,7 +90,7 @@ public class IA extends Comportment {
 
         IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
 
-        if(up.getClass() == view.Background.class){
+        if(up.getClass() == Background.class){
             this.element.getComportment().moveDown();
         }
         else if(up.equals(Boulder.getInstance())){

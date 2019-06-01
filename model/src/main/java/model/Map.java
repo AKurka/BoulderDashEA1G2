@@ -1,8 +1,8 @@
-package view;
+package model;
 
 import contract.model.IElement;
 import contract.model.Position;
-import view.DAO.Level;
+import model.DAO.Level;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -33,7 +33,7 @@ public class Map {
 
     private void buildMap(){
 
-        String currentLevel = loadLevel("level1");
+        String currentLevel = loadLevel("1");
         int i = 0;
         for (int y = 0; y<Map.HEIGHT; y++){
             for(int x = 0; x<Map.WIDTH; x++){
@@ -42,33 +42,33 @@ public class Map {
                 i++;
 
                 switch (element){
-                    case 'o' :
+                    case '0' :
                         IElement gravity = new Rock(new Position(x,y, Map.WIDTH, Map.HEIGHT), this);
                         this.gravity.add(gravity);
                         this.setElement(x,y, gravity);
                         break;
-                    case 'x':
+                    case '/':
                         this.setElement(x,y,new Wall(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case 'v':
+                    case 'D':
                         gravity = new Diamond(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
                         this.gravity.add(gravity);
                         this.setElement(x,y,gravity);
                         break;
-                    case '.':
+                    case '*':
                         this.setElement(x,y,new Dirt(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case 'u':
+                    case 'E':
                         this.setElement(x,y,Exit.getInstance(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case 'y':
+                    case 'B':
                         this.boulder = Boulder.getInstance(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
                         this.setElement(x,y,this.boulder);
                         break;
                     case ' ':
                         this.setElement(x,y,new Background(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case 'n':
+                    case 'K':
                         IElement enemy = new Monster(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
                         this.monster.add(enemy);
                         this.setElement(x,y,enemy);

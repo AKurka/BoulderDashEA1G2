@@ -1,7 +1,7 @@
 package main;
 
 import controller.Controller;
-import view.Model;
+import model.Model;
 import view.View;
 
 public class Main {

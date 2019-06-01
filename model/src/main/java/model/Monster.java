@@ -1,4 +1,4 @@
-package view;
+package model;
 
 import contract.model.Direction;
 import contract.model.Position;

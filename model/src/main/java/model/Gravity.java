@@ -1,4 +1,4 @@
-package view;
+package model;
 
 import contract.model.IElement;
 import contract.model.Position;
@@ -28,22 +28,22 @@ public class Gravity extends Comportment{
         IElement downl = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()+1];
         IElement left = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 
-        if(down.getClass() == view.Background.class){
+        if(down.getClass() == Background.class){
             this.motion = true;
             this.element.getComportment().moveDown();
         }
-        if(down.getClass() != view.Background.class && left.getClass() == view.Background.class && downl.getClass() == view.Background.class && (down.getClass() == view.Diamond.class || down.getClass() == view.Rock.class)){
+        if(down.getClass() != Background.class && left.getClass() == Background.class && downl.getClass() == Background.class && (down.getClass() == Diamond.class || down.getClass() == Rock.class)){
             this.motion = true;
             this.element.getComportment().moveLeft();
             this.element.getComportment().moveDown();
         }
 
-        if(down.getClass() != view.Background.class && right.getClass() == view.Background.class && downr.getClass() == view.Background.class && (down.getClass() == view.Diamond.class || down.getClass() == view.Rock.class)){
+        if(down.getClass() != Background.class && right.getClass() == Background.class && downr.getClass() == Background.class && (down.getClass() == Diamond.class || down.getClass() == Rock.class)){
             this.motion = true;
             this.element.getComportment().moveRight();
             this.element.getComportment().moveDown();
         }
-        if(down.getClass() != view.Background.class && down.getClass() == view.Monster.class) {
+        if(down.getClass() != Background.class && down.getClass() == Monster.class) {
             IElement enemy = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
 
             int x = enemy.getPosition().getX();
@@ -59,12 +59,12 @@ public class Gravity extends Comportment{
 
             this.element.getMap().addGravity(diamond);
         }
-        if(down.getClass() != view.Background.class && down.getClass() == view.Boulder.class && this.motion == true) {
+        if(down.getClass() != Background.class && down.getClass() == Boulder.class && this.motion == true) {
 
             Boulder.getInstance().destroy();
 
         }
-        if(down.getClass() != view.Background.class){
+        if(down.getClass() != Background.class){
             this.motion = false;
         }
     }
