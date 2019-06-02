@@ -44,14 +44,14 @@ public class Gravity extends Comportment{
             this.element.getComportment().moveDown();
         }
         if(down.getClass() != Background.class && down.getClass() == Monster.class) {
-            IElement enemy = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
+            IElement monster = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
 
-            int x = enemy.getPosition().getX();
-            int y = enemy.getPosition().getY();
-            int xMax = enemy.getPosition().getXMax();
-            int yMax = enemy.getPosition().getYMax();
+            int x = monster.getPosition().getX();
+            int y = monster.getPosition().getY();
+            int xMax = monster.getPosition().getXMax();
+            int yMax = monster.getPosition().getYMax();
 
-            this.element.getMap().destroyElement(enemy);
+            this.element.getMap().destroyElement(monster);
 
             IElement diamond = new Diamond(new Position(x,y,xMax,yMax),Monster.map);
 

@@ -7,27 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="00d750c1-4fa5-4c93-b023-67b415d244b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Boulder.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Boulder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Comportment.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Comportment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Controlled.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Controlled.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/DAO/DAOAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAO/DAOAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/DAO/DAOConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAO/DAOConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/DAO/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Diamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Dirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Dirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Gravity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Gravity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/IA.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/IA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Interaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Rock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Static.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Static.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/view/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Gravity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Gravity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Map.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/view/target/" />
@@ -48,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            <state relative-caret-position="646">
+              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,16 +43,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAO/DAOAbstract.java">
+        <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/model/IComportment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="125" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#307#308#0" expanded="true" />
-                <element signature="e#377#378#0" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+            <state relative-caret-position="221">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,35 +76,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/src/main/java/view/Maker.java">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Gravity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+            <state relative-caret-position="867">
+              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAO/DAOConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-262">
-              <caret line="90" column="22" lean-forward="true" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4087#4088#0" expanded="true" />
-                <element signature="e#4117#4118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,6 +149,7 @@
       <find>getBehaviour</find>
       <find>Hero</find>
       <find>explosion</find>
+      <find>enemy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,7 +191,6 @@
         <option value="$PROJECT_DIR$/model/src/main/java/model/Diamond.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Monster.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Dirt.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/Gravity.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Rock.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Exit.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Wall.java" />
@@ -240,8 +204,9 @@
         <option value="$PROJECT_DIR$/view/src/main/java/view/Maker.java" />
         <option value="$PROJECT_DIR$/main/src/main/java/main/Main.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/view/Map.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/Map.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/Gravity.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/Map.java" />
       </list>
     </option>
   </component>
@@ -272,7 +237,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -423,6 +387,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,7 +452,8 @@
       <workItem from="1559332946264" duration="1813000" />
       <workItem from="1559338712557" duration="260000" />
       <workItem from="1559379865324" duration="37000" />
-      <workItem from="1559386549921" duration="1541000" />
+      <workItem from="1559386549921" duration="2174000" />
+      <workItem from="1559464811328" duration="648000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented Interfaces for Model">
       <created>1559241478062</created>
@@ -552,11 +518,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559334748768</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="All Finished ? Maybe ...">
+      <created>1559427688662</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559427688662</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26389000" />
+    <option name="totallyTimeSpent" value="27670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -593,7 +566,7 @@
       <window_info anchor="right" id="Database" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1401919" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14658849" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -602,7 +575,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -612,6 +585,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -674,7 +648,8 @@
     <MESSAGE value="Added Interaction" />
     <MESSAGE value="Finished model ... Maybe" />
     <MESSAGE value="Finished View ? Maybe ? Pls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished View ? Maybe ? Pls" />
+    <MESSAGE value="All Finished ? Maybe ..." />
+    <option name="LAST_COMMIT_MESSAGE" value="All Finished ? Maybe ..." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/model/IBDModel.java" />
@@ -706,13 +681,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Automatic.java" />
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/model/IComportment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/model/IElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -843,16 +811,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/IKill.java" />
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/IGet.java" />
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Boulder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -888,18 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Gravity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,16 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/src/main/java/view/Maker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1034,6 +970,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,10 +1020,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAO/Level.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Gravity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="867">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1086,12 +1032,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262">
-          <caret line="90" column="22" lean-forward="true" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
+        <state relative-caret-position="231">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4087#4088#0" expanded="true" />
-            <element signature="e#4117#4118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/model/IComportment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

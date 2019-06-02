@@ -61,7 +61,7 @@ public class Map {
                     case 'E':
                         this.setElement(x,y,Exit.getInstance(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case 'B':
+                    case '@':
                         this.boulder = Boulder.getInstance(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
                         this.setElement(x,y,this.boulder);
                         break;
@@ -107,23 +107,23 @@ public class Map {
         return monster;
     }
 
-    public void destroyElement(IElement element) throws Exception{
+    public void destroyElement(IElement elements) throws Exception{
 
-        this.elements[element.getPosition().getX()][element.getPosition().getY()] = new Background(new Position(element.getPosition().getX(),element.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
+        this.elements[elements.getPosition().getX()][elements.getPosition().getY()] = new Background(new Position(elements.getPosition().getX(),elements.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
 
         for (IElement e : this.monster) {
-            if (e.equals(element)) {
+            if (e.equals(elements)) {
                 this.monster.remove(e);
             }
         }
 
         for (IElement e : this.gravity) {
-            if (e.equals(element)) {
+            if (e.equals(elements)) {
                 this.gravity.remove(e);
             }
         }
 
-        if(this.boulder.equals(element)){
+        if(this.boulder.equals(elements)){
             this.boulder = null;
         }
 

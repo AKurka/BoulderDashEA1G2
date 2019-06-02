@@ -16,7 +16,7 @@ public class Level extends DAOAbstract {
         if (callStatement.execute()) {
             final ResultSet result = callStatement.getResultSet();
             if (result.first()) {
-                level = level+result.getString("level");
+                level = level+result.getString("chars");
             }
             result.close();
         }
