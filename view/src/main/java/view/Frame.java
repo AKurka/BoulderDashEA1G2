@@ -11,8 +11,8 @@ public class Frame extends JFrame implements KeyListener {
 
     private IEventPerformer eventPerformer;
 
-    public Frame(IEventPerformer eventPerformer, IMaker maker, IModel model){
-        this.setTitle("BoulderDash Remastered G2");
+    public Frame(String title, IEventPerformer eventPerformer, IMaker maker, IModel model){
+        this.setTitle(title);
         this.setSize(1270, 790);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -26,7 +26,7 @@ public class Frame extends JFrame implements KeyListener {
 
         this.eventPerformer = eventPerformer;
 
-
+        this.setVisible(true);
     }
 
     @Override

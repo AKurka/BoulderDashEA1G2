@@ -10,7 +10,7 @@ public class Level extends DAOAbstract {
 
 
     public static String getLevel(final String name) throws SQLException {
-        final CallableStatement callStatement = prepareCall(SQLRequest);
+        final CallableStatement callStatement = DAOAbstract.prepareCall(SQLRequest);
         callStatement.setString(1, name);
         String level = "";
         if (callStatement.execute()) {

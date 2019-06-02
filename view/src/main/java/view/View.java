@@ -15,6 +15,10 @@ public class View  implements Runnable, IView {
 
     private IModel model;
 
+    public View(){
+
+    }
+
     @Override
     public void displayMessage(String message) {
 
@@ -29,8 +33,8 @@ public class View  implements Runnable, IView {
 
     @Override
     public void run() {
-        this.eventPerformer = new EventPerformer(orderPerformer);
+        this.eventPerformer = new EventPerformer(this.orderPerformer);
         this.maker = new Maker(this.model);
-        new Frame(this.eventPerformer, maker, model);
+        new Frame("BoulderDash", this.eventPerformer, maker, model);
     }
 }

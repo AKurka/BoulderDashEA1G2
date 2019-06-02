@@ -12,7 +12,7 @@ public class Map {
 
     static int WIDTH = 50;
 
-    private IElement[][] elements;
+    private IElement[][] element;
 
     private Model model;
 
@@ -24,7 +24,7 @@ public class Map {
 
 
     public Map(Model model){
-        this.elements = new IElement[Map.WIDTH][Map.HEIGHT];
+        this.element = new IElement[Map.WIDTH][Map.HEIGHT];
         this.model = model;
         this.monster = new CopyOnWriteArrayList<IElement>();
         this.gravity = new CopyOnWriteArrayList<IElement>();
@@ -92,11 +92,11 @@ public class Map {
     }
 
     public IElement[][] getElements(){
-        return elements;
+        return element;
     }
 
     public void setElement(int x, int y, IElement add){
-        this.elements[x][y] = add;
+        this.element[x][y] = add;
     }
 
     public Model getModel(){
@@ -109,7 +109,7 @@ public class Map {
 
     public void destroyElement(IElement elements) throws Exception{
 
-        this.elements[elements.getPosition().getX()][elements.getPosition().getY()] = new Background(new Position(elements.getPosition().getX(),elements.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
+        this.element[elements.getPosition().getX()][elements.getPosition().getY()] = new Background(new Position(elements.getPosition().getX(),elements.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
 
         for (IElement e : this.monster) {
             if (e.equals(elements)) {

@@ -8,6 +8,5 @@ public class Static extends Comportment{
 
     @Override
     public void move(){
-
     }
 }
