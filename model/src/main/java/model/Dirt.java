@@ -4,10 +4,10 @@ import contract.model.Position;
 
 public class Dirt extends Element {
 
-    private final static String STRING = "dirt";
+    private final static String IMAGE = "dirt";
 
-    public Dirt(Position position, Mine mine){
-        super(position, STRING, mine);
-        comportment = new Fix(this);
+    public Dirt(Position position, Map map){
+        super(position, IMAGE, map);
+        comportment = new Static(this);
     }
 }

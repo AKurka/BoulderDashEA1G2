@@ -2,21 +2,21 @@ package model;
 
 import contract.model.Position;
 
-public class Exit extends Element {
+public class Exit extends Element{
 
-    private final static String STRING = "exit";
+    private final static String IMAGE = "exit";
 
-    private static Exit EXIT;
+    private static Exit exit;
 
-    private Exit(Position position, Mine mine){
-        super(position, STRING, mine);
-        comportment = new Fix(this);
+    private Exit(Position position, Map map){
+        super(position, IMAGE, map);
+        comportment = new Static(this);
     }
 
-    public static Exit getInstance(Position position, Mine mine){
-        if(EXIT == null){
-            EXIT = new Exit(position, mine);
+    public static Exit getInstance(Position position, Map map){
+        if(exit == null){
+            exit = new Exit(position, map);
         }
-        return EXIT;
+        return exit;
     }
 }

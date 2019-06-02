@@ -1,6 +1,7 @@
 package contract.model;
 
 import java.awt.*;
+import java.util.Observer;
 
 public interface IElement {
 
@@ -8,15 +9,17 @@ public interface IElement {
 
     void setPosition(Position position);
 
-    Image getSprite();
+    Image getImage();
 
-    void setSprite(String sprite);
+    void setImage(String image);
 
-    IComportmentMove getComportment();
+    IComportment getComportment();
 
-    String getSpriteType();
+    String getImageName();
 
     Direction getDirection();
 
     void setDirection(Direction direction);
+
+    void setObserver(Observer observer);
 }

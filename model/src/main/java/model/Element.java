@@ -1,84 +1,101 @@
 package model;
 
 import contract.model.Direction;
+import contract.model.IComportment;
 import contract.model.IElement;
 import contract.model.Position;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Element implements IElement {
+public class Element extends Observable implements IElement {
 
     private Position position;
-    private Image Sprite;
-    ComportmentMove comportment;
-    private Mine mine;
-    private String SpriteType;
+
+    private Image image;
+
+    Comportment comportment;
+
+    private Map map;
+
+    private String ImageName;
+
     Direction direction;
 
-    Element(Position position, String sprite, Mine mine){
+    public Element(Position position, String image, Map map){
         this.position = position;
-        this.SpriteType = sprite;
-        this.Sprite = loadSprite(this.SpriteType);
-        this.mine = mine;
+        this.ImageName = image;
+        this.image = loadImage(this.ImageName);
+        this.map = map;
     }
 
-    public static Image loadSprite(String sprite){
-        String path = "model/image/"+sprite+".png";
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image result = toolkit.getImage(path);
-
-        if(result == null){
-            System.out.println("error");
+    public Image loadImage(String image){
+        String path = "img/" +image+".png";
+        System.out.println(getClass().getClassLoader().getResource(".").getPath());
+        try {
+            return ImageIO.read(getClass().getClassLoader().getResourceAsStream(path));
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-        return result;
+
+    @Override
+    public Position getPosition() {
+        return position;
     }
 
     @Override
-    public Position getPosition(){
-        return this.position;
-    }
-
-    @Override
-    public void setPosition(Position position){
+    public void setPosition(Position position) {
         this.position = position;
     }
 
-    public Mine getMine(){
-        return this.mine;
+    public Map getMap(){
+        return this.map;
     }
 
     @Override
-    public Image getSprite(){
-        return this.Sprite;
+    public Image getImage() {
+        return this.image;
     }
 
     @Override
-    public void setSprite(String sprite){
-        this.Sprite = loadSprite(sprite);
-        this.SpriteType = sprite;
+    public void setImage(String image) {
+        this.image = loadImage(image);
+        this.ImageName = image;
     }
 
     @Override
-    public String getSpriteType(){
-        return SpriteType;
-    }
-
-    public ComportmentMove getComportment(){
+    public IComportment getComportment() {
         return this.comportment;
     }
 
-    public void setCommportment(ComportmentMove comportment){
+    @Override
+    public String getImageName() {
+        return ImageName;
+    }
+
+    @Override
+    public Direction getDirection() {
+        return this.direction;
+    }
+
+    public void setComportment(Comportment comportment) {
         this.comportment = comportment;
     }
 
     @Override
-    public Direction getDirection(){
-        return direction;
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 
     @Override
-    public void setDirection(Direction direction){
-        this.direction = direction;
+    public void setObserver(Observer observer) {
+        this.addObserver(observer);
     }
 }

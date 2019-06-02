@@ -2,23 +2,25 @@ package model;
 
 import contract.model.Position;
 
-public class Diamond extends Element implements IGet, IKill {
+public class Diamond extends Element implements Interaction{
 
-    private final static String STRING = "diamond";
+    private final static String IMAGE = "diamond";
 
-    public Diamond(Position position, Mine mine){
-        super(position, STRING, mine);
+    public Diamond(Position position, Map map){
+        super(position, IMAGE, map);
         comportment = new Gravity(this);
     }
 
     @Override
     public void get(Boulder boulder) throws Exception{
-        boulder.setDiamonds(boulder.getDiamonds()+1);
-        this.getMine().destroyElement(this);
+        boulder.setDiamond(boulder.getDiamond()+1);
+        this.getMap().destroyElement(this);
     }
 
+
     @Override
-    public void kill(Element element){
+    public void kill(Element element) {
         element = null;
     }
+
 }

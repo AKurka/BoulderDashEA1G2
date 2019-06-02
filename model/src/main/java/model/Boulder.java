@@ -1,29 +1,29 @@
 package model;
 
 import contract.model.Direction;
-import contract.model.IExplosion;
+import contract.model.IDestroy;
 import contract.model.Position;
 
-public class Boulder extends Element implements IExplosion {
+public class Boulder extends Element implements IDestroy {
 
-    private static String SPRITE = "up";
+    private static String IMAGE = "up";
+
     private static Boulder boulder;
-    private int timeOut;
-    private int diamonds;
+
+    private int timeout;
+
+    private int diamond;
+
     private Direction direction;
 
-    private Boulder(Position position, Mine mine){
-        super(position, SPRITE, mine);
-        comportment = new Control(this);
+    private Boulder(Position position, Map map){
+        super(position, IMAGE, map);
+        comportment = new Controlled(this);
     }
 
-    public void startTimeOut(){
-
-    }
-
-    static public Boulder getInstance(Position position, Mine mine){
+    static public Boulder getInstance(Position position, Map map){
         if(boulder == null){
-            boulder = new Boulder(position, mine);
+            boulder = new Boulder(position, map);
         }
         return boulder;
     }
@@ -32,20 +32,12 @@ public class Boulder extends Element implements IExplosion {
         return boulder;
     }
 
-    public static String getSPRITE(){
-        return SPRITE;
+    public int getDiamond(){
+        return diamond;
     }
 
-    public void setDiamonds(int diamonds){
-        this.diamonds = diamonds;
-    }
-
-    public int getTimeOut(){
-        return timeOut;
-    }
-
-    public void setTimeOut(int timeOut){
-        this.timeOut = timeOut;
+    public void setDiamond(int diamond){
+        this.diamond = diamond;
     }
 
     public Direction getDirection(){
@@ -54,12 +46,14 @@ public class Boulder extends Element implements IExplosion {
 
     public void setDirection(Direction direction){
         this.direction = direction;
+        this.setChanged();
+        this.notifyObservers();
     }
 
     @Override
-    synchronized public void explosion() throws Exception{
-        this.getMine().destroyElement(Boulder.boulder);
-        this.getMine().getModel().setGame(false);
+    public void destroy() throws Exception {
+        this.getMap().destroyElement(Boulder.boulder);
+        this.getMap().getModel().setGame(false);
         Boulder.boulder = null;
     }
 }

@@ -6,17 +6,17 @@ import java.sql.SQLException;
 
 public class Level extends DAOAbstract {
 
-    private static String sqlExampleById   = "{call getLevel(?)}";
+    private static String SQLRequest   = "{call getLevel(?)}";
 
 
     public static String getLevel(final String name) throws SQLException {
-        final CallableStatement callStatement = prepareCall(sqlExampleById);
+        final CallableStatement callStatement = DAOAbstract.prepareCall(SQLRequest);
         callStatement.setString(1, name);
         String level = "";
         if (callStatement.execute()) {
             final ResultSet result = callStatement.getResultSet();
             if (result.first()) {
-                level = level+result.getString("level");
+                level = level+result.getString("chars");
             }
             result.close();
         }

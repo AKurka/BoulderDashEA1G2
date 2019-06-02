@@ -1,7 +1,7 @@
 package view;
 
-import contract.model.IBDModel;
-import contract.view.IPerformEvent;
+import contract.model.IModel;
+import contract.view.IEventPerformer;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -9,17 +9,14 @@ import java.awt.event.KeyListener;
 
 public class Frame extends JFrame implements KeyListener {
 
-    private static final long serialVersionUID = 3792052992605473420L;
-    private IPerformEvent performerEvent;
+    private IEventPerformer eventPerformer;
 
-    public Frame(String title, IPerformEvent perform, IElementMaker maker;IBDModel model){
+    public Frame(String title, IEventPerformer eventPerformer, IMaker maker, IModel model){
         this.setTitle(title);
         this.setSize(1270, 790);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Panel panel = new Panel(maker, model);
-
-        System.out.println("test");
 
         this.setContentPane(panel);
 
@@ -27,27 +24,28 @@ public class Frame extends JFrame implements KeyListener {
 
         addKeyListener(this);
 
-        this.performerEvent = perform;
+        this.eventPerformer = eventPerformer;
 
         this.setVisible(true);
     }
 
     @Override
-    public void keyTyped(KeyEvent e){
+    public void keyTyped(KeyEvent e) {
 
     }
 
     @Override
-    public void keyPressed(KeyEvent e){
+    public void keyPressed(KeyEvent e) {
         try{
-            performerEvent.performEvent(e);
-        } catch(Exception e1) {
-            e1.printStackTrace();
+            eventPerformer.eventPerformer(e);
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 
     @Override
-    public void keyReleased(KeyEvent e){
+    public void keyReleased(KeyEvent e) {
 
     }
 }
