@@ -12,7 +12,7 @@ public class Boulder extends Element implements IDestroy {
 
     private int timeout;
 
-    private int diamond;
+    private int diamonds;
 
     private Direction direction;
 
@@ -20,6 +20,8 @@ public class Boulder extends Element implements IDestroy {
         super(position, IMAGE, map);
         comportment = new Controlled(this);
     }
+
+
 
     static public Boulder getInstance(Position position, Map map){
         if(boulder == null){
@@ -32,12 +34,12 @@ public class Boulder extends Element implements IDestroy {
         return boulder;
     }
 
-    public int getDiamond(){
-        return diamond;
+    public int getDiamonds(){
+        return diamonds;
     }
 
-    public void setDiamond(int diamond){
-        this.diamond = diamond;
+    public void setDiamonds(int diamonds){
+        this.diamonds = diamonds;
     }
 
     public Direction getDirection(){
@@ -46,8 +48,6 @@ public class Boulder extends Element implements IDestroy {
 
     public void setDirection(Direction direction){
         this.direction = direction;
-        this.setChanged();
-        this.notifyObservers();
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Map {
 
     static int WIDTH = 50;
 
-    private IElement[][] element;
+    private IElement[][] elements;
 
     private Model model;
 
@@ -24,7 +24,7 @@ public class Map {
 
 
     public Map(Model model){
-        this.element = new IElement[Map.WIDTH][Map.HEIGHT];
+        this.elements = new IElement[Map.WIDTH][Map.HEIGHT];
         this.model = model;
         this.monster = new CopyOnWriteArrayList<IElement>();
         this.gravity = new CopyOnWriteArrayList<IElement>();
@@ -35,25 +35,26 @@ public class Map {
 
         String currentLevel = loadLevel("1");
         int i = 0;
-        for (int y = 0; y<Map.HEIGHT; y++){
-            for(int x = 0; x<Map.WIDTH; x++){
+        for(int y = 0 ;y<Map.HEIGHT; y++){
+            for (int x = 0; x<Map.WIDTH;x++){
+
                 char element = currentLevel.charAt(i);
 
                 i++;
 
-                switch (element){
-                    case '0' :
-                        IElement gravity = new Rock(new Position(x,y, Map.WIDTH, Map.HEIGHT), this);
-                        this.gravity.add(gravity);
-                        this.setElement(x,y, gravity);
+                switch(element){
+                    case '0':
+                        IElement gravit = new Rock(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
+                        this.gravity.add(gravit);
+                        this.setElement(x,y,gravit);
                         break;
                     case '/':
                         this.setElement(x,y,new Wall(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
                     case '@':
-                        gravity = new Diamond(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
-                        this.gravity.add(gravity);
-                        this.setElement(x,y,gravity);
+                        gravit = new Diamond(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
+                        this.gravity.add(gravit);
+                        this.setElement(x,y,gravit);
                         break;
                     case '*':
                         this.setElement(x,y,new Dirt(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
@@ -69,9 +70,10 @@ public class Map {
                         this.setElement(x,y,new Background(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
                     case 'K':
-                        IElement enemy = new Monster(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
-                        this.monster.add(enemy);
-                        this.setElement(x,y,enemy);
+
+                        IElement monster = new Monster(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
+                        this.monster.add(monster);
+                        this.setElement(x,y,monster);
                         break;
                 }
             }
@@ -92,11 +94,11 @@ public class Map {
     }
 
     public IElement[][] getElements(){
-        return element;
+        return elements;
     }
 
     public void setElement(int x, int y, IElement add){
-        this.element[x][y] = add;
+        this.elements[x][y] = add;
     }
 
     public Model getModel(){
@@ -109,7 +111,7 @@ public class Map {
 
     public void destroyElement(IElement elements) throws Exception{
 
-        this.element[elements.getPosition().getX()][elements.getPosition().getY()] = new Background(new Position(elements.getPosition().getX(),elements.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
+        this.elements[elements.getPosition().getX()][elements.getPosition().getY()] = new Background(new Position(elements.getPosition().getX(),elements.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
 
         for (IElement e : this.monster) {
             if (e.equals(elements)) {

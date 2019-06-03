@@ -11,64 +11,64 @@ public class Comportment implements IComportment {
         this.element = element;
     }
 
-
-
-
     @Override
     public void move() throws Exception {
 
     }
 
     @Override
-    public void moveRight() throws Exception {
-
+    synchronized public void moveRight() throws Exception{
 
         int x = this.element.getPosition().getX();
         int y = this.element.getPosition().getY();
 
         this.element.getPosition().setX(x+1);
         this.element.getMap().getElements()[x+1][y] = this.element;
-        this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
+        this.element.getMap().getElements()[x][y] = new Background(new Position(x,y,Map.WIDTH, Map.HEIGHT),this.element.getMap());
 
+        this.element.getMap().getModel().effectiveChanged();
     }
 
     @Override
-    public void moveLeft() throws Exception {
+    synchronized public void moveLeft() throws Exception{
 
         int x = this.element.getPosition().getX();
         int y = this.element.getPosition().getY();
 
         this.element.getPosition().setX(x-1);
         this.element.getMap().getElements()[x-1][y] = this.element;
-        this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
+        this.element.getMap().getElements()[x][y] = new Background(new Position(x,y,Map.WIDTH, Map.HEIGHT),this.element.getMap());
 
 
+        this.element.getMap().getModel().effectiveChanged();
     }
 
     @Override
-    public void moveUp() throws Exception {
+    synchronized public void moveUp() throws Exception{
 
         int x = this.element.getPosition().getX();
         int y = this.element.getPosition().getY();
 
         this.element.getPosition().setY(y-1);
         this.element.getMap().getElements()[x][y-1] = this.element;
-        this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
+        this.element.getMap().getElements()[x][y] = new Background(new Position(x,y,Map.WIDTH, Map.HEIGHT),this.element.getMap());
 
 
+        this.element.getMap().getModel().effectiveChanged();
     }
 
     @Override
-    public void moveDown() throws Exception {
+    synchronized public void moveDown() throws Exception{
 
         int x = this.element.getPosition().getX();
         int y = this.element.getPosition().getY();
 
         this.element.getPosition().setY(y+1);
         this.element.getMap().getElements()[x][y+1] = this.element;
-        this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
+        this.element.getMap().getElements()[x][y] = new Background(new Position(x,y,Map.WIDTH, Map.HEIGHT),this.element.getMap());
 
 
+        this.element.getMap().getModel().effectiveChanged();
     }
 
     @Override
@@ -77,7 +77,7 @@ public class Comportment implements IComportment {
     }
 
     @Override
-    public void gravity() throws Exception {
+    public void gravit1() throws Exception {
 
     }
 }

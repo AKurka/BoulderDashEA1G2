@@ -55,7 +55,7 @@ public class IA extends Comportment {
 
     private void goRight() throws Exception{
 
-        IElement right = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()];
+        IElement right = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
 
         if(right.getClass() == Background.class){
             this.element.getComportment().moveRight();

@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Element extends Observable implements IElement {
+public class Element implements IElement {
 
     private Position position;
 
@@ -91,10 +91,5 @@ public class Element extends Observable implements IElement {
     @Override
     public void setDirection(Direction direction) {
         this.direction = direction;
-    }
-
-    @Override
-    public void setObserver(Observer observer) {
-        this.addObserver(observer);
     }
 }

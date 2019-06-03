@@ -2,5 +2,5 @@ package contract.model;
 
 public interface IDestroy {
 
-    public void destroy() throws Exception;
+    void destroy() throws Exception;
 }

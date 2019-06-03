@@ -13,7 +13,7 @@ public class Diamond extends Element implements Interaction{
 
     @Override
     public void get(Boulder boulder) throws Exception{
-        boulder.setDiamond(boulder.getDiamond()+1);
+        boulder.setDiamonds(boulder.getDiamonds()+1);
         this.getMap().destroyElement(this);
     }
 

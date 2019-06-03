@@ -14,15 +14,6 @@ public class Panel extends JPanel implements Observer {
 
     public Panel(IMaker maker, IModel model){
         this.maker = maker;
-        for(int i = 0; i < model.getElements().length; i++) {
-            for(int j = 0; j < model.getElements()[i].length; j++) {
-                if(model.getElements()[i][j] != null) model.getElements()[i][j].setObserver(this);
-            }
-        }
-        model.getBoulder().setObserver(this);
-        for(IElement element: model.getMonster()) {
-            element.setObserver(this);
-        }
         repaint();
     }
 

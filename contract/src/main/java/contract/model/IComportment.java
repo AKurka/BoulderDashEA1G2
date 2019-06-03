@@ -10,5 +10,5 @@ public interface IComportment {
 
     void moveAll() throws Exception;
 
-    void gravity() throws Exception;
+    void gravit1() throws Exception;
 }

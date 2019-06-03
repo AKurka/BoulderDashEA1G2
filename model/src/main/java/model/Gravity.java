@@ -13,7 +13,7 @@ public class Gravity extends Comportment{
         super(element);
     }
 
-    public void gravity() throws Exception{
+    public void gravit1() throws Exception{
         Iterator<IElement>iterator = this.element.getMap().getGravity().iterator();
         while (iterator.hasNext()){
             iterator.next().getComportment().move();
@@ -22,36 +22,37 @@ public class Gravity extends Comportment{
 
     @Override
     public void move() throws Exception{
+
         IElement down = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
         IElement downr = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()+1];
         IElement right = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
         IElement downl = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()+1];
         IElement left = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 
-        if(down.getClass() == Background.class){
+        if(down.getClass() == model.Background.class){
             this.motion = true;
             this.element.getComportment().moveDown();
         }
-        if(down.getClass() != Background.class && left.getClass() == Background.class && downl.getClass() == Background.class && (down.getClass() == Diamond.class || down.getClass() == Rock.class)){
+        if(down.getClass() != model.Background.class && left.getClass() == model.Background.class && downl.getClass() == model.Background.class && (down.getClass() == model.Diamond.class || down.getClass() == model.Rock.class)){
             this.motion = true;
             this.element.getComportment().moveLeft();
             this.element.getComportment().moveDown();
         }
 
-        if(down.getClass() != Background.class && right.getClass() == Background.class && downr.getClass() == Background.class && (down.getClass() == Diamond.class || down.getClass() == Rock.class)){
+        if(down.getClass() != model.Background.class && right.getClass() == model.Background.class && downr.getClass() == model.Background.class && (down.getClass() == model.Diamond.class || down.getClass() == model.Rock.class)){
             this.motion = true;
             this.element.getComportment().moveRight();
             this.element.getComportment().moveDown();
         }
-        if(down.getClass() != Background.class && down.getClass() == Monster.class) {
-            IElement monster = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
+        if(down.getClass() != model.Background.class && down.getClass() == model.Monster.class) {
+            IElement enemy = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
 
-            int x = monster.getPosition().getX();
-            int y = monster.getPosition().getY();
-            int xMax = monster.getPosition().getXMax();
-            int yMax = monster.getPosition().getYMax();
+            int x = enemy.getPosition().getX();
+            int y = enemy.getPosition().getY();
+            int xMax = enemy.getPosition().getXMax();
+            int yMax = enemy.getPosition().getYMax();
 
-            this.element.getMap().destroyElement(monster);
+            this.element.getMap().destroyElement(enemy);
 
             IElement diamond = new Diamond(new Position(x,y,xMax,yMax),Monster.map);
 
@@ -59,12 +60,12 @@ public class Gravity extends Comportment{
 
             this.element.getMap().addGravity(diamond);
         }
-        if(!(down instanceof Background) && down instanceof Boulder && this.motion == true) {
+        if(down.getClass() != model.Background.class && down.getClass() == model.Boulder.class && this.motion == true) {
 
             Boulder.getInstance().destroy();
 
         }
-        if(down.getClass() != Background.class){
+        if(down.getClass() != model.Background.class){
             this.motion = false;
         }
     }

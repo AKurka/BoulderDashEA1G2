@@ -21,5 +21,4 @@ public interface IElement {
 
     void setDirection(Direction direction);
 
-    void setObserver(Observer observer);
 }

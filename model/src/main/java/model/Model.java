@@ -10,7 +10,7 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Model implements IModel {
+public class Model extends Observable implements IModel {
 
     private Map map;
 
@@ -52,6 +52,7 @@ public class Model implements IModel {
 
     @Override
     public void observerAdd(Observer o) {
+        addObserver(o);
     }
 
     @Override
@@ -63,8 +64,9 @@ public class Model implements IModel {
     public void getDiamond(IElement element) throws Exception {
         Boulder boulder = Boulder.getInstance();
         this.map.destroyElement(element);
-        boulder.setDiamond(boulder.getDiamond()+1);
-        System.out.println(boulder.getDiamond());
+        boulder.setDiamonds(boulder.getDiamonds()+1);
+        System.out.println(boulder.getDiamonds());
+        this.effectiveChanged();
     }
 
     @Override
@@ -75,7 +77,7 @@ public class Model implements IModel {
             throw new Exception("You loose");
 
         }
-        return this.score = boulder.getDiamond();
+        return this.score = boulder.getDiamonds();
     }
 
     @Override
@@ -100,7 +102,7 @@ public class Model implements IModel {
 
     @Override
     public void observerDelete(Observer o) {
-
+        //this.deleteObservers(o);
     }
 
     @Override
@@ -116,5 +118,10 @@ public class Model implements IModel {
     @Override
     public int getScore() {
         return score;
+    }
+
+    public void effectiveChanged(){
+        this.setChanged();
+        this.notifyObservers();
     }
 }
