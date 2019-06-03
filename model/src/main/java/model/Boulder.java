@@ -46,6 +46,8 @@ public class Boulder extends Element implements IDestroy {
 
     public void setDirection(Direction direction){
         this.direction = direction;
+        this.setChanged();
+        this.notifyObservers();
     }
 
     @Override

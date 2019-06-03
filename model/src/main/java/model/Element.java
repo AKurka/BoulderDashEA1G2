@@ -5,9 +5,13 @@ import contract.model.IComportment;
 import contract.model.IElement;
 import contract.model.Position;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Element implements IElement {
+public class Element extends Observable implements IElement {
 
     private Position position;
 
@@ -28,16 +32,15 @@ public class Element implements IElement {
         this.map = map;
     }
 
-    public static Image loadImage(String image){
-        String path = "resources/images/"+image+".png";
-
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image result = toolkit.getImage(path);
-
-        if(result == null){
-            System.out.println("Error loading image");
+    public Image loadImage(String image){
+        String path = "img/" +image+".png";
+        try {
+            return ImageIO.read(getClass().getClassLoader().getResourceAsStream(path));
         }
-        return result;
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
@@ -88,5 +91,10 @@ public class Element implements IElement {
     @Override
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    @Override
+    public void setObserver(Observer observer) {
+        this.addObserver(observer);
     }
 }

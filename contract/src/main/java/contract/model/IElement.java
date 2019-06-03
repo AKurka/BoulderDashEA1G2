@@ -1,6 +1,7 @@
 package contract.model;
 
 import java.awt.*;
+import java.util.Observer;
 
 public interface IElement {
 
@@ -19,4 +20,6 @@ public interface IElement {
     Direction getDirection();
 
     void setDirection(Direction direction);
+
+    void setObserver(Observer observer);
 }

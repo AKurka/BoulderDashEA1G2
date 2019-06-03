@@ -95,7 +95,7 @@ public class IA extends Comportment {
         }
         else if(up.equals(Boulder.getInstance())){
             this.element.getComportment().moveDown();
-            Boulder.getInstance().destroy();
+            //Boulder.getInstance().destroy();
         }
         else{
             this.element.setDirection(Direction.RIGHT);

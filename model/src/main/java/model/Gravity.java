@@ -59,7 +59,7 @@ public class Gravity extends Comportment{
 
             this.element.getMap().addGravity(diamond);
         }
-        if(down.getClass() != Background.class && down.getClass() == Boulder.class && this.motion == true) {
+        if(!(down instanceof Background) && down instanceof Boulder && this.motion == true) {
 
             Boulder.getInstance().destroy();
 

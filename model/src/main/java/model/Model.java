@@ -3,12 +3,14 @@ package model;
 import contract.model.IElement;
 import contract.model.IModel;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Model extends Observable implements IModel {
+public class Model implements IModel {
 
     private Map map;
 
@@ -20,7 +22,12 @@ public class Model extends Observable implements IModel {
 
     public Model(){
         this.map = new Map(this);
-        this.gameOver = Element.loadImage("gameover");
+        try {
+            this.gameOver = ImageIO.read(getClass().getClassLoader().getResourceAsStream("img/gameover.png"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         this.game = true;
     }
 
@@ -45,7 +52,6 @@ public class Model extends Observable implements IModel {
 
     @Override
     public void observerAdd(Observer o) {
-        addObserver(o);
     }
 
     @Override
@@ -59,7 +65,6 @@ public class Model extends Observable implements IModel {
         this.map.destroyElement(element);
         boulder.setDiamond(boulder.getDiamond()+1);
         System.out.println(boulder.getDiamond());
-        this.hasChanged();
     }
 
     @Override
@@ -95,7 +100,7 @@ public class Model extends Observable implements IModel {
 
     @Override
     public void observerDelete(Observer o) {
-        this.deleteObserver(o);
+
     }
 
     @Override

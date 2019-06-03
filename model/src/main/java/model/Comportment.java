@@ -30,7 +30,6 @@ public class Comportment implements IComportment {
         this.element.getMap().getElements()[x+1][y] = this.element;
         this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
 
-        this.element.getMap().getModel().hasChanged();
     }
 
     @Override
@@ -43,7 +42,6 @@ public class Comportment implements IComportment {
         this.element.getMap().getElements()[x-1][y] = this.element;
         this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
 
-        this.element.getMap().getModel().hasChanged();
 
     }
 
@@ -57,7 +55,6 @@ public class Comportment implements IComportment {
         this.element.getMap().getElements()[x][y-1] = this.element;
         this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
 
-        this.element.getMap().getModel().hasChanged();
 
     }
 
@@ -71,7 +68,6 @@ public class Comportment implements IComportment {
         this.element.getMap().getElements()[x][y+1] = this.element;
         this.element.getMap().getElements()[x][y] = new Background(new Position(x, y, Map.WIDTH, Map.HEIGHT), this.element.getMap());
 
-        this.element.getMap().getModel().hasChanged();
 
     }
 

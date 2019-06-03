@@ -38,7 +38,7 @@ public class Controlled extends Comportment{
             this.element.getComportment().moveLeft();
         }
         else if(left.getClass() == Rock.class){
-            IElement left2 = element.getMap().getElements()[element.getPosition().getX()-2][element.getPosition().getY()];;
+            IElement left2 = element.getMap().getElements()[element.getPosition().getX()-2][element.getPosition().getY()];
             if(left2.getClass() == Background.class){
                 left.getComportment().moveLeft();
                 this.element.getComportment().moveLeft();
@@ -63,7 +63,7 @@ public class Controlled extends Comportment{
             this.element.getComportment().moveRight();
         }
         else if(right.getClass() == Rock.class){
-            IElement right2 = element.getMap().getElements()[element.getPosition().getX()+2][element.getPosition().getY()];;
+            IElement right2 = element.getMap().getElements()[element.getPosition().getX()+2][element.getPosition().getY()];
             if(right2.getClass() == Background.class){
                 right.getComportment().moveRight();
                 this.element.getComportment().moveRight();
@@ -81,7 +81,7 @@ public class Controlled extends Comportment{
     }
 
     private void goUp() throws Exception{
-        IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()-1];
+        IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()];
 
         if(up.getClass() == Background.class || up.getClass() == Dirt.class){
             this.element.getComportment().moveUp();
