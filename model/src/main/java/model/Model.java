@@ -20,7 +20,7 @@ public class Model extends Observable implements IModel {
 
     private int score;
 
-    public Model(){
+    public Model() throws Exception{
         this.map = new Map(this);
         try {
             this.gameOver = ImageIO.read(getClass().getClassLoader().getResourceAsStream("img/gameover.png"));

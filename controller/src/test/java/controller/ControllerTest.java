@@ -30,11 +30,11 @@ public class ControllerTest {
      *      excepted number of diamond
      */
     @Test
-    public void endGame() throws Exception{
+    public void EndGame() throws Exception{
         try{
             this.controller.End(8);
         } catch (final Exception e){
-            final String expected = "You need more diamond";
+            final String expected = "You need more diamonds";
             assertEquals(expected, e.getMessage());
         }
     }

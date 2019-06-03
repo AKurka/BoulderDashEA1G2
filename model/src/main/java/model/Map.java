@@ -23,7 +23,7 @@ public class Map {
     private IElement boulder;
 
 
-    public Map(Model model){
+    public Map(Model model) throws Exception{
         this.elements = new IElement[Map.WIDTH][Map.HEIGHT];
         this.model = model;
         this.monster = new CopyOnWriteArrayList<IElement>();
@@ -31,7 +31,7 @@ public class Map {
         this.buildMap();
     }
 
-    private void buildMap(){
+    private void buildMap() throws  Exception{
 
         String currentLevel = loadLevel("1");
         int i = 0;
