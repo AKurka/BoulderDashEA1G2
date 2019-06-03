@@ -50,7 +50,7 @@ public class Element implements IElement {
      * @return the sprite's image
      */
     public static Image loadImage(String image){
-        String path = "ressources/img/"+image+".png";
+        String path = "main/resources/img/"+image+".png";
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Image result = toolkit.getImage(path);
