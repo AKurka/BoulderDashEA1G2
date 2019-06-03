@@ -43,6 +43,10 @@ public class Controller implements IOrderPerformer {
         this.view = view;
     }
 
+    public Controller() {
+
+    }
+
     /**
      * Principal method use for get back initial position of some element
      * @throws Exception

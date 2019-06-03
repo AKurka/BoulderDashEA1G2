@@ -32,7 +32,7 @@ public class ControllerTest {
     @Test
     public void EndTest() throws Exception{
         try{
-            this.controller.End(12);
+            this.controller.End(8);
         } catch (final Exception e){
             final String expected = "You need more diamonds";
             assertEquals(expected, e.getMessage());
