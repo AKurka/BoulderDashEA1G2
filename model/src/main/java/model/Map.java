@@ -50,7 +50,7 @@ public class Map {
                     case '/':
                         this.setElement(x,y,new Wall(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case 'D':
+                    case '@':
                         gravity = new Diamond(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
                         this.gravity.add(gravity);
                         this.setElement(x,y,gravity);
@@ -61,7 +61,7 @@ public class Map {
                     case 'E':
                         this.setElement(x,y,Exit.getInstance(new Position(x,y,Map.WIDTH,Map.HEIGHT),this));
                         break;
-                    case '@':
+                    case '#':
                         this.boulder = Boulder.getInstance(new Position(x,y,Map.WIDTH,Map.HEIGHT),this);
                         this.setElement(x,y,this.boulder);
                         break;

@@ -35,14 +35,14 @@ public class Maker implements IMaker{
         System.out.println(element);
         if(element != null) g2d.drawImage(element.getImage(),element.getPosition().getX()*16,element.getPosition().getY()*16,null);
 
-        Font fonte = new Font("TimeRoman", Font.BOLD, 32);
+        Font fonte = new Font("TimeRoman", Font.BOLD, 20);
         g2d.setFont(fonte);
-        g2d.setColor(Color.BLACK);
+        g2d.setColor(Color.RED);
 
         try {
-            g2d.drawString("Diamond : "+ this.model.diamondCounter(), 32, 750);
+            g2d.drawString("Diamond : "+ this.model.diamondCounter(), 32, 50);
         } catch (Exception e) {
-            g2d.drawString("Diamond :", 32, 956);
+            g2d.drawString("Diamond :", 32, 32);
         }
     }
 

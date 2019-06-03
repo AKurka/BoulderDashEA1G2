@@ -13,6 +13,7 @@ public class Monster extends Element{
         super(position, IMAGE, map);
         Monster.map = map;
         comportment = new IA(this);
-        direction = Direction.DOWN;
+        // remove for testing PGEE
+        // direction = Direction.DOWN;
     }
 }

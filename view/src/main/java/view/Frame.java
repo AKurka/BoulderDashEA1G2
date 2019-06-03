@@ -13,7 +13,7 @@ public class Frame extends JFrame implements KeyListener {
 
     public Frame(String title, IEventPerformer eventPerformer, IMaker maker, IModel model){
         this.setTitle(title);
-        this.setSize(1270, 790);
+        this.setSize(816, 518);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Panel panel = new Panel(maker, model);

@@ -81,7 +81,7 @@ public class Controlled extends Comportment{
     }
 
     private void goUp() throws Exception{
-        IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()];
+        IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()-1];
 
         if(up.getClass() == Background.class || up.getClass() == Dirt.class){
             this.element.getComportment().moveUp();

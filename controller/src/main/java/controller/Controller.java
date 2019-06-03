@@ -37,7 +37,7 @@ public class Controller implements IOrderPerformer {
             this.monster.getComportment().moveAll();
         }
         this.gravity.getComportment().gravity();
-        Thread.sleep(100);
+        Thread.sleep(300);
     }
 
 
