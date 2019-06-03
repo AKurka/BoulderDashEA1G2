@@ -6,16 +6,19 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 
 /**
- * <h1>The class test DirtTest</h1>
+ * <h1>The class test ExitTest</h1>
  * @author groupe2 */
- public class DirtTest extends ElementTest{
+public class GravityTest extends ComportmentTest{
+
     /**
-     * Instantiate a new Dirt
+     * Instantiate a Stone before each test
+     * @throws Exception
      */
+
+
     @Override
     @Before
     public void setUp() throws Exception {
-        this.actual = new Dirt(new Position(1,1,10,10), this.map);
-        this.comportment = new Static(actual);
+        this.element = new Rock(new Position(5,5,10,10), map);
     }
 }

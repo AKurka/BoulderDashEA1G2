@@ -4,13 +4,14 @@ import contract.model.Position;
 import org.junit.Before;
 
 import static org.junit.Assert.*;
-
 /**
- * <h1>The class test DirtTest</h1>
+ * <h1>The class test MonsterTest</h1>
  * @author groupe2 */
- public class DirtTest extends ElementTest{
+public class MonsterTest extends ElementTest{
+
     /**
-     * Instantiate a new Dirt
+     * Instantiate a new Monster
+     * @throws Exception
      */
     @Override
     @Before

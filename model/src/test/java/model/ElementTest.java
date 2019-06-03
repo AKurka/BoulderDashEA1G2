@@ -9,16 +9,30 @@ import java.awt.*;
 
 import static org.junit.Assert.*;
 
+/**
+ * <h1>The class test ElementTest</h1>
+ * @author groupe2 */
 public class ElementTest {
 
+    /** The tested Element */
     protected Element actual;
+    /** The behaviour of the tested Element */
     protected Comportment comportment;
+    /** The map of the tested element */
     protected Map map;
 
+    /**
+     * Execute before each test
+     * @throws Exception
+     * 		Exception
+     */
     @Before
     public void setUp() throws Exception {
     }
 
+    /**
+     * Check if the element has a move behaviour and the good one
+     */
     @Test
     public void getPosition() throws Exception{
 
@@ -29,6 +43,11 @@ public class ElementTest {
         assertEquals(expected.getY(), this.actual.getPosition().getY());
     }
 
+    /**
+     * Check if the element has a position
+     * @throws Exception
+     * 		The exception
+     */
     @Test
     public void setPosition() throws Exception{
 
@@ -42,11 +61,19 @@ public class ElementTest {
         assertEquals(expected.getYMax(), this.actual.getPosition().getYMax());
     }
 
+    /**
+     * Check if the setter position work correctly
+     * @throws Exception
+     * 		The exception
+     */
     @Test
     public void getImage() {
         assertNotNull(this.actual.getComportment().getClass());
     }
 
+    /**
+     * Check if the element has a image
+     */
     @Test
     public void getComportment() {
 
