@@ -8,21 +8,35 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Map {
 
+    /** The height of the map */
     static int HEIGHT = 30;
 
+    /** The width of the map */
     static int WIDTH = 50;
 
+    /** The tab of the different elements */
     private IElement[][] elements;
 
+    /** The model that contain the map */
     private Model model;
 
+    /** The list of the monster */
     private CopyOnWriteArrayList<IElement> monster;
 
+    /** The list of the gravitable element */
     private CopyOnWriteArrayList<IElement> gravity;
 
+    /** The Boulder */
     private IElement boulder;
 
 
+    /**
+     * Instantiates a new map
+     * @param model
+     * 		The model
+     * @throws Exception
+     *		map exception
+     */
     public Map(Model model) throws Exception{
         this.elements = new IElement[Map.WIDTH][Map.HEIGHT];
         this.model = model;
@@ -30,6 +44,12 @@ public class Map {
         this.gravity = new CopyOnWriteArrayList<IElement>();
         this.buildMap();
     }
+
+    /**
+     * Builds the map
+     * @throws Exception
+     * 		position Exception
+     */
 
     private void buildMap() throws  Exception{
 
@@ -80,6 +100,12 @@ public class Map {
         }
     }
 
+    /**
+     * Load the level, get it from the database
+     * @param levelToLoad
+     * 		The level to load
+     * @return a String that contain the level template
+     */
     private String loadLevel(String levelToLoad){
 
         String result ="";
@@ -93,22 +119,50 @@ public class Map {
         return result;
     }
 
+    /**
+     * Get a tab that contain all the map elements
+     * @return a tab of Elements
+     */
+
     public IElement[][] getElements(){
         return elements;
     }
+
+    /**
+     * Add a element in the map
+     * @param x
+     * 		The x column where add the element
+     * @param y
+     * 		The y column where add the element
+     * @param add
+     * 		The element to add
+     */
 
     public void setElement(int x, int y, IElement add){
         this.elements[x][y] = add;
     }
 
+    /**
+     * Get the model of the map
+     * @return the model of the map
+     */
     public Model getModel(){
         return model;
     }
 
+    /**
+     * Return the monsters from the tab
+      * @return
+     */
     public CopyOnWriteArrayList<IElement> getMonster(){
         return monster;
     }
 
+    /**
+     * Remove the element from the tab
+     * @param elements
+     * @throws Exception
+     */
     public void destroyElement(IElement elements) throws Exception{
 
         this.elements[elements.getPosition().getX()][elements.getPosition().getY()] = new Background(new Position(elements.getPosition().getX(),elements.getPosition().getY(),Map.WIDTH,Map.HEIGHT), this);
@@ -131,18 +185,36 @@ public class Map {
 
     }
 
+    /**
+     * Method for add an monster
+     * @param monster
+     * 		Name of monster to add
+     */
     public void addMonster(IElement monster){
         this.monster.add(monster);
     }
 
+    /**
+     * Use for copy and write on a array list
+     * @return gravity
+     */
     public CopyOnWriteArrayList<IElement>getGravity(){
         return gravity;
     }
 
+    /**
+     * try to synchronize thread
+     * @param gravity
+     * 		element affect by  gravity
+     */
     public void addGravity(IElement gravity){
         this.gravity.add(gravity);
     }
 
+    /**
+     * Method for get the boulder
+     * @return boulder
+     */
     public IElement getBoulder(){
         return boulder;
     }

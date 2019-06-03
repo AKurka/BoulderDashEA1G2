@@ -5,14 +5,30 @@ import contract.model.Position;
 
 import java.util.Iterator;
 
+/**
+ * <h1>The Class Gravity</h1>
+ *
+ * @author Groupe2
+ */
+
 public class Gravity extends Comportment{
 
     private boolean motion = false;
 
+    /**
+     * Instantiate a new gravity comportement movement
+     * @param element
+     * 		The element
+     */
     public Gravity(Element element){
         super(element);
     }
 
+    /**
+     * Launch the gravity for all the gravitable element
+     * @throws Exception
+     * 		The exception
+     */
     public void gravit1() throws Exception{
         Iterator<IElement>iterator = this.element.getMap().getGravity().iterator();
         while (iterator.hasNext()){
@@ -20,6 +36,9 @@ public class Gravity extends Comportment{
         }
     }
 
+    /**
+     *  @see Comportment
+     */
     @Override
     public void move() throws Exception{
 

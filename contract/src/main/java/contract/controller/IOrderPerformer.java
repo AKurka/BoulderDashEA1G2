@@ -1,5 +1,11 @@
 package contract.controller;
 
+/**
+ *  <h1>The interface of OrderPerformer</h1>
+ *
+ * @author Groupe2
+ *
+ */
 public interface IOrderPerformer {
 
     /**

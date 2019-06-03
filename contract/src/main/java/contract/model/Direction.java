@@ -8,6 +8,9 @@ package contract.model;
 
 public enum Direction {
 
+    /**
+     * enumeration for the direction of elements
+     */
     UP,
     RIGHT,
     DOWN,

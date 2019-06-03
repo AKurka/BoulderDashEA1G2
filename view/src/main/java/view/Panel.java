@@ -8,21 +8,46 @@ import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * <h1>The class Panel</h1>
+ *
+ * @author Groupe2
+ */
+
 public class Panel extends JPanel implements Observer {
 
+    /** Print the different model's element on the screen */
     private IMaker maker;
 
+
+    /**
+     * Instantiate the panel and repaint it
+     * @param maker
+     * @param model
+     */
     public Panel(IMaker maker, IModel model){
         this.maker = maker;
         repaint();
     }
 
 
+    /**
+     * the method create from Observable
+     * @param o
+     * 		observable name
+     * @param arg
+     * 		object name to update
+     */
     @Override
     public void update(Observable o, Object arg) {
         repaint();
     }
 
+    /**
+     * allows to paint the component on the frame
+     * @param g
+     * 		name the graphic
+     */
     @Override
     public void paintComponent(Graphics g){
         if(this.maker.getModel().isGame()){

@@ -3,6 +3,11 @@ package model;
 import contract.model.Direction;
 import contract.model.IElement;
 
+/**
+ * Instantiate a new automatic move behaviour
+ * @param element
+ * 		The element to set the behaviour
+ */
 public class Controlled extends Comportment{
 
 
@@ -11,6 +16,9 @@ public class Controlled extends Comportment{
     }
 
 
+    /**
+     * The automatic move
+     */
     @Override
     public void move() throws Exception{
         Direction direction = this.element.getDirection();
@@ -31,6 +39,11 @@ public class Controlled extends Comportment{
         }
     }
 
+    /**
+     * Check and if it's possible move to the left
+     * @throws Exception
+     * 		behaviour exception
+     */
     private void goLeft() throws Exception{
         IElement left = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 
@@ -56,6 +69,12 @@ public class Controlled extends Comportment{
         }
     }
 
+    /**
+     * Check and if it's possible move to the right
+     * @throws Exception
+     * 		behaviour exception
+     */
+
     private void goRight() throws Exception{
         IElement right = element.getMap().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
 
@@ -80,6 +99,11 @@ public class Controlled extends Comportment{
         }
     }
 
+    /**
+     * Check and if it's possible move to the up
+     * @throws Exception
+     *		behaviour exception
+     */
     private void goUp() throws Exception{
         IElement up = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()-1];
 
@@ -100,6 +124,11 @@ public class Controlled extends Comportment{
         }
     }
 
+    /**
+     * Check and if it's possible move to the down
+     * @throws Exception
+     * 		behaviour exception
+     */
     private void goDown() throws Exception{
         IElement down = element.getMap().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
 

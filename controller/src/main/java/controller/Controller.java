@@ -8,25 +8,46 @@ import contract.model.IElement;
 import contract.model.IModel;
 import contract.view.IView;
 
+/**
+ * <h1>The class BoulderDashPerformer</h1>
+ *
+ * @author Groupe2
+ */
+
 public class Controller implements IOrderPerformer {
 
+    /** The model */
     private IModel model;
 
+    /** The view */
     private IView view;
 
+    /** The boulder */
     private IElement boulder;
 
+    /** The monster */
     private IElement monster;
 
+    /** The gravity */
     private IElement gravity;
 
+    /**
+     * Create constructor
+     * @param model
+     *      Use for set the actual model
+     * @param view
+     *      Use for set the actual view
+     */
     public Controller(IModel model, IView view){
         this.model = model;
         this.view = view;
     }
 
-    public Controller(){}
-
+    /**
+     * Principal method use for get back initial position of some element
+     * @throws Exception
+     *      Game loop exception
+     */
     public void play() throws Exception{
         view.start(this.model, this);
         this.boulder = this.model.getBoulder();
@@ -39,6 +60,11 @@ public class Controller implements IOrderPerformer {
         this.gameLoop();
     }
 
+    /**
+     * create a loop and a thread for enemy and gravity
+     * @throws Exception
+     *      thread exception
+     */
     private void gameLoop() throws Exception{
         while(this.boulder != null){
             if(!this.model.getMonster().isEmpty()){
@@ -52,6 +78,11 @@ public class Controller implements IOrderPerformer {
 
 
 
+    /**
+     * @throws Exception
+     * 		Thread Exception
+     * @see IOrderPerformer
+     */
     @Override
     public void orderPerformer(Order order) throws Exception {
         switch (order){
@@ -71,6 +102,13 @@ public class Controller implements IOrderPerformer {
         this.boulder.getComportment().move();
     }
 
+    /**
+     * Method use when we want end the game
+     * @param diamond
+     * 		the number of diamond collected
+     * @throws Exception
+     * 		Exception not enough diamond
+     */
     public void End(int diamond) throws Exception{
         if (diamond < 10)
             throw new Exception("You need more diamonds");
