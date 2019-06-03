@@ -38,12 +38,7 @@ public class Model extends Observable implements IModel {
      */
     public Model() throws Exception{
         this.map = new Map(this);
-        try {
-            this.gameOver = ImageIO.read(getClass().getClassLoader().getResourceAsStream("img/gameover.png"));
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.gameOver = Element.loadImage("gameover");
         this.game = true;
     }
 

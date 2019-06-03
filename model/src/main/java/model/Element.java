@@ -49,15 +49,18 @@ public class Element implements IElement {
      * 		The sprite's name to load
      * @return the sprite's image
      */
-    public Image loadImage(String image){
-        String path = "img/" +image+".png";
-        try {
-            return ImageIO.read(getClass().getClassLoader().getResourceAsStream(path));
+    public static Image loadImage(String image){
+        String path = "ressources/img/"+image+".png";
+
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image result = toolkit.getImage(path);
+
+
+        if(result == null){
+            System.out.println("error");
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+
+        return result;
     }
 
 
