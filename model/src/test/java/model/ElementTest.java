@@ -63,7 +63,6 @@ public class ElementTest {
 
     /**
      * Check if the setter position work correctly
-     * @throws Exception
      * 		The exception
      */
     @Test

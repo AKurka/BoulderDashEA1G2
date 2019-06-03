@@ -28,8 +28,8 @@ public class Boulder extends Element implements IDestroy {
 
     /**
      * Instantiate a new Boulder
-     * @param position
-     * @param map
+     * @param position the position
+     * @param map the map
      */
     private Boulder(Position position, Map map){
         super(position, IMAGE, map);
@@ -38,9 +38,9 @@ public class Boulder extends Element implements IDestroy {
 
     /**
      * method use for create an instance of boulder
-     * @param position
+     * @param position the position
      * 		The position to set
-     * @param map
+     * @param map the map
      * 		The map to set
      * @return return a new boulder
      */
@@ -69,7 +69,7 @@ public class Boulder extends Element implements IDestroy {
 
     /**
      * setDiamond on the map
-     * @param diamonds
+     * @param diamonds the number of diamonds
      * 		The number of diamond to set
      */
     public void setDiamonds(int diamonds){
@@ -88,7 +88,7 @@ public class Boulder extends Element implements IDestroy {
 
     /**
      * with the direction get before, set the direction of the hero
-     * @param direction
+     * @param direction the direction to set
      * 		The direction to set
      */
     public void setDirection(Direction direction){
@@ -98,7 +98,7 @@ public class Boulder extends Element implements IDestroy {
     /**
      * @throws Exception
      * 		The exception
-     * @see IDestroy
+     * @see IDestroy the interface of destroy
      */
     @Override
     public void destroy() throws Exception {

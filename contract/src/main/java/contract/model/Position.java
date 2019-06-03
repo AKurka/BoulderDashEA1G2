@@ -22,13 +22,13 @@ public class Position {
 
     /**
      * Instantiate a new Position
-     * @param x
+     * @param x the x
      * 		The position along x axis
-     * @param y
+     * @param y the y
      * 		The position along y axis
-     * @param xMax
+     * @param xMax the xMax
      * 		The max position along x axis
-     * @param yMax
+     * @param yMax the yMax coordinate
      * 		The max position along y axis
      * @throws Exception
      *      max position is out of range
@@ -58,7 +58,7 @@ public class Position {
 
     /**
      * Instantiate a new Position
-     * @param position
+     * @param position the position
      * 		The position
      */
     public Position(Position position){
@@ -103,7 +103,6 @@ public class Position {
 
     /**
      * Sets the x coordinate
-     * @return x
      * 		The x coordinate to set
      */
     public void setX(int x) throws Exception {
@@ -116,7 +115,6 @@ public class Position {
 
     /**
      * Sets the y coordinate
-     * @return y
      * 		The y coordinate to set
      */
     public void setY(int y) throws Exception {
@@ -128,7 +126,6 @@ public class Position {
     }
     /**
      * Sets the x coordinate
-     * @return x
      * 		The x coordinate to set
      */
 
@@ -138,7 +135,6 @@ public class Position {
 
     /**
      * Sets the y coordinate
-     * @return y
      * 		The y coordinate to set
      */
     public void setyMax(int yMax){

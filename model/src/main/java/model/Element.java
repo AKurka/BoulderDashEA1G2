@@ -45,7 +45,7 @@ public class Element implements IElement {
 
     /**
      * Get the sprite in the database
-     * @param sprite
+     * @param image
      * 		The sprite's name to load
      * @return the sprite's image
      */

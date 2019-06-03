@@ -22,8 +22,8 @@ public class Panel extends JPanel implements Observer {
 
     /**
      * Instantiate the panel and repaint it
-     * @param maker
-     * @param model
+     * @param maker the Maker class
+     * @param model the Model class
      */
     public Panel(IMaker maker, IModel model){
         this.maker = maker;
@@ -33,9 +33,9 @@ public class Panel extends JPanel implements Observer {
 
     /**
      * the method create from Observable
-     * @param o
+     * @param o the observable
      * 		observable name
-     * @param arg
+     * @param arg the argument of the update
      * 		object name to update
      */
     @Override
@@ -45,7 +45,7 @@ public class Panel extends JPanel implements Observer {
 
     /**
      * allows to paint the component on the frame
-     * @param g
+     * @param g the grapgic
      * 		name the graphic
      */
     @Override

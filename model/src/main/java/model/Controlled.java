@@ -4,10 +4,9 @@ import contract.model.Direction;
 import contract.model.IElement;
 
 /**
- * Instantiate a new automatic move behaviour
- * @param element
- * 		The element to set the behaviour
+ * The class fr the controller in the model
  */
+
 public class Controlled extends Comportment{
 
 
