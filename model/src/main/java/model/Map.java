@@ -53,7 +53,7 @@ public class Map {
 
     private void buildMap() throws  Exception{
 
-        String currentLevel = loadLevel("1");
+        String currentLevel = loadLevel("2");
         int i = 0;
         for(int y = 0 ;y<Map.HEIGHT; y++){
             for (int x = 0; x<Map.WIDTH;x++){

@@ -36,7 +36,8 @@ public class IA extends Comportment {
     /**
      * @see Comportment
      */
-    @Override public void move() throws Exception{
+    @Override
+    synchronized public void move() throws Exception{
         Direction direction = this.element.getDirection();
 
         switch (direction){
@@ -61,6 +62,7 @@ public class IA extends Comportment {
      * 		comportement Exception
      */
     private void goLeft() throws Exception{
+
         IElement left = element.getMap().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 
         if(left.getClass() == Background.class){
