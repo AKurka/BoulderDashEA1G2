@@ -2,20 +2,36 @@ package model;
 
 import contract.model.IComportment;
 import contract.model.Position;
-
+/**
+ * <h1>The Class Comportment</h1>
+ * @author Groupe2
+ */
 public class Comportment implements IComportment {
 
+    /** The element */
     Element element;
 
+    /** Instantiate a new move's comportment*/
     public Comportment(Element element){
         this.element = element;
     }
 
+
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
     @Override
     public void move() throws Exception {
-
     }
 
+
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
     @Override
     synchronized public void moveRight() throws Exception{
 
@@ -29,6 +45,11 @@ public class Comportment implements IComportment {
         this.element.getMap().getModel().effectiveChanged();
     }
 
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
     @Override
     synchronized public void moveLeft() throws Exception{
 
@@ -43,6 +64,11 @@ public class Comportment implements IComportment {
         this.element.getMap().getModel().effectiveChanged();
     }
 
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
     @Override
     synchronized public void moveUp() throws Exception{
 
@@ -57,6 +83,12 @@ public class Comportment implements IComportment {
         this.element.getMap().getModel().effectiveChanged();
     }
 
+
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
     @Override
     synchronized public void moveDown() throws Exception{
 
@@ -71,10 +103,22 @@ public class Comportment implements IComportment {
         this.element.getMap().getModel().effectiveChanged();
     }
 
+
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
     @Override
     public void moveAll() throws Exception {
 
     }
+
+    /**
+     * @see IComportment
+     * @throws Exception
+     * 		Comportment exception
+     */
 
     @Override
     public void gravit1() throws Exception {
